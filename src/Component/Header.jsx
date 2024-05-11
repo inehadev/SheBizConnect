@@ -8,7 +8,7 @@ export default function Header (){
         <Flex  justifyContent={'space-between'}  >
             
         <Flex  ml = {3} alignItems={"center"}  >
-         <Heading mt={4} color={"pink.900"} fontFamily={"aerial"} fontSize={"30px"} >SheBizConnect</Heading>
+         <Heading mt={4} color={"pink.900"} fontFamily={"aerial"} fontSize={"30px"} ><a href="/">SheBizConnect</a></Heading>
          </Flex>
          <Flex>
           <InputGroup>

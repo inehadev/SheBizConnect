@@ -19,7 +19,7 @@ import Header from "../Component/Header";
             </Flex>
             
         </Flex>
-        <Button ml={"32%"} bg={"pink.900"} fontFamily={"fonts.heading"}  mt={5}>Get Started   <Icon ml={1} as={ArrowForwardIcon} boxSize={6}  /></Button>
+        <Button ml={"32%"} bg={"pink.900"} fontFamily={"fonts.heading"}  mt={5}> <a href="/categories">Get Started  </a> <Icon ml={1} as={ArrowForwardIcon} boxSize={6}  /></Button>
         </>
     )
  }
