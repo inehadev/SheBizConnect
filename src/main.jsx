@@ -4,6 +4,7 @@ import App from './App.jsx';
 import './index.css';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
+import { authProvider } from './Context/AuthContext.jsx';
 
 
 const theme = extendTheme({
@@ -24,10 +25,12 @@ const theme = extendTheme({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <authProvider>
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <App />
       </ChakraProvider>
     </BrowserRouter>
+    </authProvider>
   </React.StrictMode>,
 );

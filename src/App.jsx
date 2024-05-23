@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <Box className= "bg-pink-200"  h="100vh">
+    <Box className= "bg-white"  h="100vh">
     
     <Routes>
      
