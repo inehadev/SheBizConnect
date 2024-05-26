@@ -1,6 +1,7 @@
 import { Flex , Box, Heading, Input, Button } from "@chakra-ui/react";
 import React, { useContext , useState } from "react";
 import { authContext } from "../Context/AuthContext";
+import axios from "axios";
 export default function Register (){
 
   const[name, setname]=useState('');
@@ -9,16 +10,42 @@ export default function Register (){
   const [password , setpassword]=useState('');
 
 
-  const register=useContext(authContext)
+  const register=useContext(authContext);
   const handleRegister  = async(e)=> {
     e.preventDefault();
-    try {
-      console.log("api fetched")
-      await register(name , username , email , password);
-    } catch (error) {
-      console.log('error')
+   
+//  try {
+//       console.log("api fetched")
+//       await register(name , username , email , password);
+//     } catch (error) {
+//       console.log(error.message)
       
-    }
+//     }
+
+   
+      try {
+          const bodyparameter ={
+              name:name ,
+              username:username,
+              email:email,
+              password:password
+          
+          }
+
+          const axiosheader = {
+              headers:{
+                  "Accept":"application/json",
+              }
+          }
+
+          const response = await axios.post('http://localhost:4000/register' ,  bodyparameter ,  axiosheader );
+          console.log(response.data);
+          
+      } catch (error) {
+          console.log(error.message)
+          
+      }
+  
 
   
   }
@@ -43,7 +70,7 @@ export default function Register (){
         <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="password" placeholder={"Enter your Password"} onChange={(e)=>{
           setpassword(e.target.value)
         }} />
-        <Button  w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" bg={"pink.900"} borderRadius={24} onClick={handleRegister}>Register</Button>
+        <Button  w={"500px"}   borderColor="pink.900" color={"pink.900"}   border={"1px"}  bg={"white"} borderRadius={24} onClick={handleRegister}>Register</Button>
 
       </Flex>
      </Box>

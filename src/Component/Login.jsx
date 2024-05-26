@@ -14,7 +14,7 @@ export default function Login (){
       <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="text" placeholder={"Enter your username"} />
         <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="email" placeholder={"Enter your Email"} />
         <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="password" placeholder={"Enter your Password"} />
-        <Button  w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" bg={"pink.900"} borderRadius={24}>Login</Button>
+        <Button  w={"500px"}   borderColor="pink.900" color={"pink.900"}   border={"1px"}  bg={"white"} borderRadius={24} onClick={handleRegister}>Login</Button>
 
       </Flex>
      </Box>

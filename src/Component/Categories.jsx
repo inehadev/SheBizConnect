@@ -14,7 +14,7 @@ export default function Categories (){
 
          <Box mt={10} ml={5}   >
             <Flex gap={7}>
-           <Card maxW='250px' bg={"pink.100"}>
+           <Card maxW='250px' bg={"white"}>
             <CardBody  >
                <Image
                src='/makeup.jpg'  alt='img' borderRadius='lg' />
@@ -31,7 +31,7 @@ export default function Categories (){
        </Card>
 
 
-       <Card maxW='250px' bg={"pink.100"}>
+       <Card maxW='250px' bg={"white"}>
            <CardBody  >
           <Image  src='/cooking.jpg'  alt='img'  borderRadius='lg' />
          <Stack mt='6' spacing='3'>
@@ -48,7 +48,7 @@ export default function Categories (){
 
 
            
-    <Card maxW='250px' bg={"pink.100"}>
+    <Card maxW='250px' bg={"white"}>
      <CardBody  >
      <Image  src='/art.jpg'  alt='img'  borderRadius='lg' />
      <Stack mt='6' spacing='3'>
@@ -64,7 +64,7 @@ export default function Categories (){
      </Card>
 
 
-     <Card maxW='250px' bg={"pink.100"}>
+     <Card maxW='250px' bg={"white"}>
      <CardBody  >
      <Image  src='/health.jpg'  alt='img'  borderRadius='lg' />
      <Stack mt='6' spacing='3'>
@@ -80,7 +80,7 @@ export default function Categories (){
      </Card>
 
 
-     <Card maxW='250px' bg={"pink.100"}>
+     <Card maxW='250px' bg={"white"}>
      <CardBody  >
      <Image  src='/digital-services.jpg'  alt='img'  borderRadius='lg' />
      <Stack mt='6' spacing='3'>
