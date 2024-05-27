@@ -1,5 +1,6 @@
 import { Flex , Box, Heading, Input, Button } from "@chakra-ui/react";
 import React, { useContext , useState } from "react";
+import { Link } from "@chakra-ui/react";
 import { authContext } from "../Context/AuthContext";
 import axios from "axios";
 export default function Register (){
@@ -53,7 +54,7 @@ export default function Register (){
     <>
      <Flex  alignItems={"center"} flexDirection={"column"} >
      <Heading mt={14} color={"pink.900"} fontFamily={"aerial"} fontSize={"40px"} >SheBizConnect</Heading>
-     <Box mt={10}  paddingLeft="4" border="1px " borderRadius={14} borderColor={"pink.900"} w={"570px"} h={"400px"}   >
+     <Box mt={10}  paddingLeft="4" border="1px " borderRadius={14} borderColor={"pink.900"} w={"570px"} h={"430px"}   >
       <Flex justifyContent={"center"}>
          <Heading fontFamily={"aerial"} mt={4} color={"pink.900"}>Register</Heading>
       </Flex>
@@ -71,7 +72,7 @@ export default function Register (){
           setpassword(e.target.value)
         }} />
         <Button  w={"500px"}   borderColor="pink.900" color={"pink.900"}   border={"1px"}  bg={"white"} borderRadius={24} onClick={handleRegister}>Register</Button>
-
+        <p  className= "text-gray-500  " >Already have an account yet? <Link href ='/login'>Login</Link></p>
       </Flex>
      </Box>
      </Flex>
