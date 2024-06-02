@@ -1,34 +1,29 @@
 import React from "react";
-import {Button , Divider, Flex ,Heading,Link , Text , Box, Input,  InputRightAddon , InputGroup} from '@chakra-ui/react'
-import { SearchIcon } from "@chakra-ui/icons";
-export default function Header (){
-    return (
-        <>
-       
-        <Flex  justifyContent={'space-between'}  >
-            
-        <Flex  ml = {3} alignItems={"center"}  >
-         <Heading mt={4} color={"pink.900"} fontFamily={"aerial"} fontSize={"30px"} ><a href="/">SheBizConnect</a></Heading>
-         </Flex>
-         <Flex>
-          <InputGroup>
-          <Input type="text" mt={6} h={"40px"} w={"700px"}  color={"pink.900"}    borderColor="pink.900"   focusBorderColor="pink.900"
-              errorBorderColor="pink.900" placeholder="Looking for a specific service?" />
-              <InputRightAddon mt={6}  bg={"pink.900"}><SearchIcon h={"40px"} color={"gray"} /></InputRightAddon>  
-              </InputGroup>
-             
-    
-         </Flex>
-         <Flex fontFamily={"aerial"} mt={2} mr={5} gap={3}>
-         <Link> <Text  mt={4} color={"pink.900"} fontFamily={"aerial"} fontSize={"20px"}><a href ='/register'>Register </a></Text></Link>
-         <Divider orientation="vertical" height="20px" borderWidth="1px" color={"black"} mt={5}/>
-         <Link> <Text  mt={4} color={"pink.900"} fontFamily={"aerial"} fontSize={"20px"}><a href = {'/login'}>Login </a></Text></Link>
-         </Flex>
+import { Link } from "react-router-dom";
+import { IoSearch, IoSearchOutline } from "react-icons/io5";
 
-      
-         </Flex>
-          <Divider bg={"black"} mt={6}/>
-          </>
-     
+export default function Header () {
+    return(
+        <>
+        <div className="h-12 flex justify-between " >
+            <div className="mt-5">
+                <h2 className="ml-14 text-xl font-family-aerial">SheBizConnect</h2>
+                </div>
+
+                <div className="flex gap5" >
+                <div className="h-10 w-[600px] border border-zinc-400 mt-5 rounded-full flex justify-between items-center px-8" >
+                <input type="text" className="outline-none border-none" placeholder="Search the name" />
+            <IoSearch/>
+                </div>
+                </div>
+            
+            <div className="mt-5" >
+              <Link className="mr-14 text-lg" href='/register'>Register</Link>
+              <Link className="mr-14 text-lg" href='/login'>Login</Link>
+            </div>
+
+
+        </div>
+        </>
     )
 }

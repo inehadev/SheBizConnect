@@ -11,18 +11,18 @@ function App() {
 
   return (
     <>
-    <Box className= "bg-white"  h="100vh">
     
+   
     <Routes>
      
-    <Route path='/register' element={<Register/>} />
+    <Route path='/' element ={<Header/>} />
+    {/* <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
-      <Route path='/' element ={<HeroPage/>} />
-      <Route path='/categories' element ={<Categories/>} />
+      <Route path='/categories' element ={<Categories/>} /> */}
 
     </Routes>
     
-    </Box>
+    
        
     </>
   )

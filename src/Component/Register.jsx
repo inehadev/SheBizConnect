@@ -11,7 +11,6 @@ export default function Register (){
   const [password , setpassword]=useState('');
 
 
-  const register=useContext(authContext);
   const handleRegister  = async(e)=> {
     e.preventDefault();
    
@@ -52,30 +51,7 @@ export default function Register (){
   }
   return (
     <>
-     <Flex  alignItems={"center"} flexDirection={"column"} >
-     <Heading mt={14} color={"pink.900"} fontFamily={"aerial"} fontSize={"40px"} >SheBizConnect</Heading>
-     <Box mt={10}  paddingLeft="4" border="1px " borderRadius={14} borderColor={"pink.900"} w={"570px"} h={"430px"}   >
-      <Flex justifyContent={"center"}>
-         <Heading fontFamily={"aerial"} mt={4} color={"pink.900"}>Register</Heading>
-      </Flex>
-      <Flex flexDirection={"column"} alignItems={"center"} gap={6} mt={5} >
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="text" placeholder={"Enter your Name"} onChange={(e)=>{
-          setname(e.target.value)
-        }} />
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="text" placeholder={"Enter your username"}  onChange={(e)=>{
-          setusername(e.target.value)
-        }}/>
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="email" placeholder={"Enter your Email"} onChange={(e)=>{
-          setemail(e.target.value)
-        }} />
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="password" placeholder={"Enter your Password"} onChange={(e)=>{
-          setpassword(e.target.value)
-        }} />
-        <Button  w={"500px"}   borderColor="pink.900" color={"pink.900"}   border={"1px"}  bg={"white"} borderRadius={24} onClick={handleRegister}>Register</Button>
-        <p  className= "text-gray-500  " >Already have an account yet? <Link href ='/login'>Login</Link></p>
-      </Flex>
-     </Box>
-     </Flex>
+    
     </>
   )
 }

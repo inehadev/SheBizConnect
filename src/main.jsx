@@ -7,30 +7,21 @@ import { BrowserRouter } from 'react-router-dom';
 import { authProvider } from './Context/AuthContext.jsx';
 
 
-const theme = extendTheme({
-  colors: {
-    pink: {
-      900: "#4B5563", 
-      700: "#8B5CF6",
-      1200: "#1a202c",
-    },
-  },
 
-  fonts: {
-    body: "Poppins, sans-serif",
-    heading: "Poppins, sans-serif",
-  },
 
-});
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <authProvider>
+  
     <BrowserRouter>
-      <ChakraProvider theme={theme}>
+     
         <App />
-      </ChakraProvider>
+     
     </BrowserRouter>
-    </authProvider>
+   
   </React.StrictMode>,
 );
+
+
+
