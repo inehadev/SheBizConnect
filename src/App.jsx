@@ -15,10 +15,10 @@ function App() {
    
     <Routes>
      
-    <Route path='/' element ={<Header/>} />
-    {/* <Route path='/register' element={<Register/>} />
+    <Route path='/' element ={<HeroPage/>} />
+    <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
-      <Route path='/categories' element ={<Categories/>} /> */}
+      <Route path='/categories' element ={<Categories/>} />
 
     </Routes>
     

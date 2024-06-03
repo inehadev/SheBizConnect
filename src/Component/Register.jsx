@@ -51,7 +51,32 @@ export default function Register (){
   }
   return (
     <>
-    
+    <div className="text-4xl text-pink-900 ml-[40%] mt-10 font-arial">
+        SheBizConnect
+    </div>
+    <div className="h-[400px] w-[400px] border border-pink-900 ml-[450px] mt-16 flex-col gap-6 rounded-lg ">
+        <div className="text-3xl ml-14 text-pink-900 mt-7">
+          Create Your Account!
+        </div>
+        
+           <div className="flex-col ml-14 mt-9 ">
+           <div className="mt-5 "><input className="border border-pink-900 px-3 py-3  h-8 rounded-md  w-64 " type="text" placeholder="Enter Your Name"/>
+            </div>
+              <div className="mt-5" >
+              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email"/>
+                </div>
+           <div className="mt-5">
+           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password"/>
+        
+           </div>
+   
+            <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full"> Register</button>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Already have an account?<Link href="/login">Login</Link> </p>
+           </div>
+       
+
+
+    </div>
     </>
   )
 }
