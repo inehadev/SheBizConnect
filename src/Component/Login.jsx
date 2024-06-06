@@ -36,23 +36,31 @@ export default function Login (){
   }
     return(
         <>
-        <Flex  alignItems={"center"} flexDirection={"column"} >
-         <Heading mt={14} color={"pink.900"} fontFamily={"aerial"} fontSize={"40px"} >SheBizConnect</Heading>
+        <div className="text-4xl text-pink-900 ml-[40%] mt-10 font-arial">
+        SheBizConnect
+    </div>
+    <div className="h-[350px] w-[400px] border border-pink-900 ml-[450px] mt-16 flex-col gap-6 rounded-lg ">
+        <div className="text-3xl ml-14 text-pink-900 mt-7">
+          Create Your Account!
+        </div>
         
-         <Box mt={10}  paddingLeft="4"  border="1px " borderRadius={14} justifyContent={"center"} borderColor={"pink.900"} w={"570px"} h={"360px"} >
-      <Flex justifyContent={"center"}>
-         <Heading fontFamily={"aerial"}mt={2} color={"pink.900"}>Login</Heading>
-      </Flex>
-      <Flex flexDirection={"column"} alignItems={"center"} gap={6} mt={5} >
-      <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="text" placeholder={"Enter your username"} onChange={(e)=>{setusername(e.target.value)}} />
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="email" placeholder={"Enter your Email"} onChange={(e)=>{setemail(e.target.value)}} />
-        <Input w={"500px"}   borderColor="pink.900"   focusBorderColor="pink.900" color={"pink.900"} type="password" placeholder={"Enter your Password"}  onChange={(e)=>{setpassword(e.target.value)}}/>
-        <Button  w={"500px"}   borderColor="pink.900" color={"pink.900"}   border={"1px"}  bg={"white"} borderRadius={24} onClick={handleLogin}>Login</Button>
-        <p  className= "text-gray-500  " >Don't have an account yet? <Link href ='/register'>Register</Link></p>
+           <div className="flex-col ml-14 mt-9 ">
+          
+              <div className="mt-5" >
+              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email"/>
+                </div>
+           <div className="mt-5">
+           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password"/>
+        
+           </div>
+   
+            <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full">Login</button>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link href="/register">Register</Link> </p>
+           </div>
+       
 
-      </Flex>
-     </Box>
-     </Flex>
+
+    </div>
         </>
     )
 }
