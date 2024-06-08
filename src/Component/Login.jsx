@@ -47,10 +47,10 @@ export default function Login (){
            <div className="flex-col ml-14 mt-9 ">
           
               <div className="mt-5" >
-              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email"/>
+              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email" onChange={(e)=>setemail(e.target.value)} />
                 </div>
            <div className="mt-5">
-           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password"/>
+           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" />
         
            </div>
    
