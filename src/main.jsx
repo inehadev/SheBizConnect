@@ -10,7 +10,6 @@ import { authProvider } from './Context/AuthContext.jsx';
 
 
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   

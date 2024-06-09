@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .bg-cus-slate {
+      background-color: theme('colors.cus-slate');
+    }
+  }
+  
+  body {
+      @apply bg-cus-slate;
+  }

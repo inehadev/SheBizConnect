@@ -36,7 +36,7 @@ export default function Login (){
   }
     return(
         <>
-        <div className="text-4xl text-pink-900 ml-[40%] mt-10 font-arial">
+        <div className="text-4xl text-pink-900 ml-[40%] mt-10 font-poppins">
         SheBizConnect
     </div>
     <div className="h-[350px] w-[400px] border border-pink-900 ml-[450px] mt-16 flex-col gap-6 rounded-lg ">

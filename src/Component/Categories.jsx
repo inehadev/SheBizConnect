@@ -5,99 +5,39 @@ import Header from "./Header";
 export default function Categories (){
     return (
       <>
-      <Header/>
-      <Flex flexDirection={"column"}>
-        <Box ml={"14%"} >
-            <Heading mt={3} fontFamily={"fonts.heading"} color={"pink.900"} >Categories</Heading>
-        </Box>
-         {/* -------CARD-----------*/}
+      
+      <div>
+        <div className="text-3xl text-pink-900 mt-10 ml-10">Categories</div>
+        <hr  className="w-full border-pink-900 opacity-60 drop-shadow-md mt-2 ml-9"/>
+        <div className=" flex gap-10 ml-10">
+          <button className="rounded-full border border-pink-900 shadow-md  mt-5 w-20 h-8">All</button>
+          <button  className="rounded-full border border-pink-900 shadow-md  mt-5 w-24 h-8" >Cooking</button>
+          <button className="rounded-full border border-pink-900 shadow-md  mt-5 w-24 h-8" >Art</button>
+          <button className="rounded-full border border-pink-900 shadow-md  mt-5 w-24 h-8" >Style</button>
+          <button className="rounded-full border border-pink-900 shadow-md  mt-5 w-28 h-8" >Marketing</button>
+        </div>
 
-         <Box mt={10} ml={5}   >
-            <Flex gap={7}>
-           <Card maxW='250px' bg={"white"}>
-            <CardBody  >
-               <Image
-               src='/makeup.jpg'  alt='img' borderRadius='lg' />
-             <Stack mt='6' spacing='3'>
-              <Heading size='md' fontFamily={"fonts.heading"} color={"pink.900"}>Style & Fashion</Heading>
-              </Stack>
-            </CardBody>
-           <Divider className="bg-pink-900" />
-          <CardFooter>
-            <ButtonGroup spacing='2'>
-              <Button variant='solid' bg={"pink.900"} > Explore Service  </Button>
-            </ButtonGroup>
-         </CardFooter>
-       </Card>
+        <div className="flex">
 
+        <div className=  " rounded-md mt-10 h-[210px] w-[300px] ml-12 ">
+        <img className="  border  border-pink-900 rounded-md onject-contain  "  src="/cooking.jpg" alt="img" />
+        <p className="text-xl mt-2 text-pink-900 ml-7 " > Cooking</p>
+        </div>
+      
+       <div className=  "  rounded-md mt-10 h-[240px] w-[300px] ml-12 ">
+        <img className="  border border-pink-900 rounded-md onject-contain  "  src="/art.jpg" alt="img" />
+        <p className="text-xl mt-2 text-pink-900 ml-7 " >Art</p>
+        </div>
 
-       <Card maxW='250px' bg={"white"}>
-           <CardBody  >
-          <Image  src='/cooking.jpg'  alt='img'  borderRadius='lg' />
-         <Stack mt='6' spacing='3'>
-          <Heading size='md' fontFamily={"fonts.heading"} color={"pink.900"}>Cooking & Food Products</Heading>
-         </Stack>
-      </CardBody>
-     <Divider className="bg-pink-900" />
-     <CardFooter>
-      <ButtonGroup spacing='2'>
-       <Button variant='solid' bg={"pink.900"} > Explore Service</Button>
-      </ButtonGroup>
-    </CardFooter>
-     </Card>
+        <div className=  "rounded-md mt-10 h-[200px] w-[300px] ml-12 ">
+        <img className=" border border-pink-900 rounded-md onject-contain h-[230px] "  src="/makeup.jpg" alt="img" />
+        <p className="text-xl mt-2 text-pink-900 ml-7 " >Style</p>
+        </div>
+      
 
+       </div>
+      </div>
 
-           
-    <Card maxW='250px' bg={"white"}>
-     <CardBody  >
-     <Image  src='/art.jpg'  alt='img'  borderRadius='lg' />
-     <Stack mt='6' spacing='3'>
-       <Heading size='md' fontFamily={"fonts.heading"} color={"pink.900"}>artCraft & classes</Heading>
-     </Stack>
-      </CardBody>
-     <Divider className="bg-pink-900" />
-     <CardFooter>
-      <ButtonGroup spacing='2'>
-       <Button variant='solid' bg={"pink.900"} > Explore Service</Button>
-      </ButtonGroup>
-    </CardFooter>
-     </Card>
-
-
-     <Card maxW='250px' bg={"white"}>
-     <CardBody  >
-     <Image  src='/health.jpg'  alt='img'  borderRadius='lg' />
-     <Stack mt='6' spacing='3'>
-       <Heading size='md' fontFamily={"fonts.heading"} color={"pink.900"}>Health Service</Heading>
-     </Stack>
-      </CardBody>
-     <Divider className="bg-pink-900" />
-     <CardFooter>
-      <ButtonGroup spacing='2'>
-       <Button variant='solid' bg={"pink.900"} > Explore Service</Button>
-      </ButtonGroup>
-    </CardFooter>
-     </Card>
-
-
-     <Card maxW='250px' bg={"white"}>
-     <CardBody  >
-     <Image  src='/digital-services.jpg'  alt='img'  borderRadius='lg' />
-     <Stack mt='6' spacing='3'>
-       <Heading size='md' fontFamily={"fonts.heading"} color={"pink.900"}>Digital Services</Heading>
-     </Stack>
-      </CardBody>
-     <Divider className="bg-pink-900" />
-     <CardFooter>
-      <ButtonGroup spacing='2'>
-       <Button variant='solid' bg={"pink.900"} > Explore Service</Button>
-      </ButtonGroup>
-    </CardFooter>
-     </Card>
-     </Flex>
-         </Box>
-     
-      </Flex>
       </>
     )
 }
