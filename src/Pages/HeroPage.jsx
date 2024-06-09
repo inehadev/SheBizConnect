@@ -3,6 +3,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { FaArrowRight } from "react-icons/fa";
 import Header from "../Component/Header";
 import Categories from "../Component/Categories";
+import Card from "../Component/Card";
 export default function HeroPage() {
     return (
         <>
@@ -17,12 +18,12 @@ export default function HeroPage() {
                       Elevate  Your Life with <span className="text-pink-900">SheBizConnect</span>
                 
                  </div>
-                <div className="mt-7 ml-24"><button className="flex border shadow-md ml-24 border-pink-900 px-2 py-2 rounded-md">Get Started <FaArrowRight className="mt-1 ml-2" /></button></div>
+                {/* <div className="mt-7 ml-14"><button className="flex border shadow-md ml-4 border-pink-900 px-2 py-2 rounded-md">Get Started <FaArrowRight className="mt-1 ml-2" /></button></div> */}
             </div>
-            {/* <div><img  className="bg-pink-900 rounded-lg opacity-50"  src="women-.png" /></div> */}
+ 
         </div >
 
-        <Categories/>
+        <Card/>
         
         </>
     )

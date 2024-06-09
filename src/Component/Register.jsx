@@ -14,13 +14,7 @@ export default function Register (){
   const handleRegister  = async(e)=> {
     e.preventDefault();
    
-//  try {
-//       console.log("api fetched")
-//       await register(name , username , email , password);
-//     } catch (error) {
-//       console.log(error.message)
-      
-//     }
+
 
    
       try {
@@ -61,18 +55,18 @@ export default function Register (){
         </div>
         
            <div className="flex-col ml-14 mt-9 ">
-           <div className="mt-5 "><input className="border border-pink-900 px-3 py-3  h-8 rounded-md  w-64 " type="text" placeholder="Enter Your Name"/>
+           <div className="mt-5 "><input className="border border-pink-900 px-3 py-3  h-8 rounded-md  w-64 " type="text" placeholder="Enter Your Name" onChange={(e)=>setname(e.target.value)}/>
             </div>
               <div className="mt-5" >
-              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email"/>
+              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email" onChange={(e)=>setemail(e.target.value)}/>
                 </div>
            <div className="mt-5">
-           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password"/>
+           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" onChange={(e)=>setpassword(e.target.value)}/>
         
            </div>
    
             <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full"> Register</button>
-            <p className="mt-5 text-lg  text-pink-900 ml-2">Already have an account?<Link href="/login">Login</Link> </p>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Already have an account?<Link to="/login">Login</Link> </p>
            </div>
        
 

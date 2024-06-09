@@ -55,7 +55,7 @@ export default function Login (){
            </div>
    
             <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full">Login</button>
-            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link href="/register">Register</Link> </p>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link to="/register">Register</Link> </p>
            </div>
        
 
