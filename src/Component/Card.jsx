@@ -14,9 +14,9 @@ export default function (){
         {data.map((item)=>(
              <div className="flex gap-14 ">
 
-             <div key={item.id} className=  " border  border-pink-900 rounded-md mt-10 h-[200px]  ml-14  bg-pink-900 ">
-             <img className="  border  border-pink-900  h-[160px]  "  src={item.src} alt="img" />
-             <p className="text-xl mt-2 text-black ml-7 " > {item.title}</p>
+             <div key={item.id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]  ml-14  mb-7 ">
+             <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.src} alt="img" />
+             <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.title}</p>
              </div>
            
             {/* <div className=  "   border border-pink-900  rounded-md mt-10 h-[200px]  bg-pink-900">

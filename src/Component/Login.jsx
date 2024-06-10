@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "@chakra-ui/react";
 import axios from "axios";
-import { Box , Flex , Input , Heading, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 export default function Login (){
 
-  const[username , setusername]=useState('');
+ const [username , setusername]=useState('');
   const [email , setemail]=useState('');
   const [password , setpassword]=useState('');
+  const navigate=useNavigate()
 
   const handleLogin = async(e)=>{
     e.preventDefault();
     try {
 
       const bodyparameter = {
-        username :username,
+      
+        username:username,
         email:email,
         password:password
       }
@@ -24,11 +26,23 @@ export default function Login (){
         }
     }
     
-    const response = await axios.post("http://localhost:4000/login" ,bodyparameter , axiosheader);
+    const response = await axios.post("http://localhost:4000/login" , bodyparameter , axiosheader);
     console.log(response.data);
+
+    if(response){
+    
+      const token=  await response.data.token;
+      const username = await response.data.user.username;
+      localStorage.setItem('x-auth-token',token)
+      localStorage.setItem('username',username)
+  
+      navigate('/')
+  
+     }
       
     } catch (error) {
-      console.log(error.message);
+      console.log('error login')
+      console.log({"integration error" : error.message});
       
     }
    
@@ -45,17 +59,21 @@ export default function Login (){
         </div>
         
            <div className="flex-col ml-14 mt-9 ">
-          
+
+           <div className="mt-5" >
+              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="text" placeholder="Enter Your username" onChange={(e)=>setusername(e.target.value)} />
+                </div>  
+
               <div className="mt-5" >
               <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email" onChange={(e)=>setemail(e.target.value)} />
                 </div>
            <div className="mt-5">
-           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" />
+           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" onChange={(e)=>setpassword(e.target.value)} />
         
            </div>
    
-            <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full">Login</button>
-            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link to="/register">Register</Link> </p>
+            <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full" onClick={handleLogin}>Login</button>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link to='/register'>Register</Link> </p>
            </div>
        
 
