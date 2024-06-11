@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 @layer utilities {
-    .bg-cus-slate {
-      background-color: theme('colors.cus-slate');
+    .bg-gray {
+      background-color: theme('colors.bg-gray');
     }
+
   }
   
   body {
-      @apply bg-cus-slate;
+      @apply bg-gray;
   }

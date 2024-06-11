@@ -10,7 +10,7 @@ export default {
         'poppins': ['"Poppins"', 'sans-serif'],
    },
    colors:{
-    'cus-slate': ['#fafafa'],
+    'bg-gray': '#fff1f2'
    }
     },
   },

@@ -25,7 +25,7 @@ export default function Login (){
             "Accept":"application/json",
         }
     }
-    
+    a
     const response = await axios.post("http://localhost:4000/login" , bodyparameter , axiosheader);
     console.log(response.data);
 
@@ -51,7 +51,7 @@ export default function Login (){
     return(
         <>
         <div className="text-4xl text-pink-900 ml-[40%] mt-10 font-poppins">
-        SheBizConnect
+        <Link href="/">SheBizConnect</Link>
     </div>
     <div className="h-[350px] w-[400px] border border-pink-900 ml-[450px] mt-16 flex-col gap-6 rounded-lg ">
         <div className="text-3xl ml-14 text-pink-900 mt-7">
@@ -61,19 +61,19 @@ export default function Login (){
            <div className="flex-col ml-14 mt-9 ">
 
            <div className="mt-5" >
-              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="text" placeholder="Enter Your username" onChange={(e)=>setusername(e.target.value)} />
+              <input className="border border-pink-900 w-64  bg-transparent rounded-md h-8 px-3 py-3 " type="text" placeholder="Enter Your username" onChange={(e)=>setusername(e.target.value)} />
                 </div>  
 
               <div className="mt-5" >
-              <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="email" placeholder="Enter Your Email" onChange={(e)=>setemail(e.target.value)} />
+              <input className="border border-pink-900 w-64 rounded-md  bg-transparent h-8 px-3 py-3 " type="email" placeholder="Enter Your Email" onChange={(e)=>setemail(e.target.value)} />
                 </div>
            <div className="mt-5">
-           <input className="border border-pink-900 w-64 rounded-md h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" onChange={(e)=>setpassword(e.target.value)} />
+           <input className="border border-pink-900 w-64 rounded-md  bg-transparent h-8 px-3 py-3 " type="password" placeholder="Enter Your Password" onChange={(e)=>setpassword(e.target.value)} />
         
            </div>
    
             <button className="mt-5 border bg-pink-900 h-9 w-64 text-white px-5  rounded-full" onClick={handleLogin}>Login</button>
-            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link to='/register'>Register</Link> </p>
+            <p className="mt-5 text-lg  text-pink-900 ml-2">Don't have an account?<Link href='/register'>Register</Link> </p>
            </div>
        
 

@@ -24,7 +24,7 @@ export default function Header() {
         <>
             <div className="h-12 flex justify-between  font-poppins" >
                 <div className="mt-7">
-                    <h2 className="ml-14 text-3xl font-family-aerial text-pink-900 font-medium"><Link to = '/'>SheBizConnect</Link></h2>
+                    <h2 className="ml-14 text-3xl font-family-aerial text-pink-900 font-medium " ><Link to = '/'>SheBizConnect</Link></h2>
                 </div>
 
                 <div className="flex gap5" >
