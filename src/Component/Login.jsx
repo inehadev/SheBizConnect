@@ -25,7 +25,7 @@ export default function Login (){
             "Accept":"application/json",
         }
     }
-    a
+
     const response = await axios.post("http://localhost:4000/login" , bodyparameter , axiosheader);
     console.log(response.data);
 

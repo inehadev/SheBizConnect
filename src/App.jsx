@@ -5,6 +5,7 @@ import HeroPage from './Pages/HeroPage'
 import Categories from './Component/Categories'
 import Register from './Component/Register'
 import Login from './Component/Login'
+import CategoryModal from './Component/CategoryModal'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
       <Route path='/categories' element ={<Categories/>} />
+      <Route path='/addcategory' element ={<CategoryModal/>} />
 
     </Routes>
     
