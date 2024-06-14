@@ -1,16 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import axios from "axios";
+
 
 export default function (){
 
-    const[image , setimage]=useState();
-    const[type , settype]=useState();
+    // useEffect(async()=>{
+    //     const response = await axios.get("http://localhost:4000/getCategory");
+    //     console.log(response);
+    // },[])
 
-    useEffect (()=>{
-        
-    })
-   
 
     const data = [
         { id: '1', src: "/cooking.jpg", title: "Cooking" },
