@@ -3,36 +3,38 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 
-export default function (){
-
-    // useEffect(async()=>{
-    //     const response = await axios.get("http://localhost:4000/getCategory");
-    //     console.log(response);
-    // },[])
+export default function Card (){
 
 
+
+    
     const data = [
         { id: '1', src: "/cooking.jpg", title: "Cooking" },
         { id: '2', src: "/art.jpg", title: "Art" },
         { id: '3', src: "/makeup.jpg", title: "Style" },
         { id: '4', src: "/health.jpg", title: "Health" },
         { id: '5', src: "/digital-services.jpg", title: "Marketing" },
+
+    
+
     ]
+
+    // const filteredData = data.filter(item => item.title.toLowerCase().includes(filter.toLowerCase()));
     return (
         <Marquee play speed={90} pauseOnHover={true}>
-       <div className="mt-10 flex  flex-wrap justify-center gap-14">
-        {data.map((item)=>(
-             <div className="flex  ">
-
-             <div key={item.id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
-             <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.src} alt="img" />
-             <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.title}</p>
+        <div className="mt-10 flex  flex-wrap justify-center gap-14">
+         {data.map((item)=>(
+              <div className="flex  ">
+ 
+              <div key={item.id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
+              <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.src} alt="img" />
+              <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.title}</p>
+              </div>
+            
              </div>
-           
-            </div>
-    ))}
-       </div>
-       </Marquee>
+     ))}
+        </div>
+        </Marquee>
     )
 }
 

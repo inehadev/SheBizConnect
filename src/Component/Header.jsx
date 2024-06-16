@@ -2,8 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoSearch, IoSearchOutline } from "react-icons/io5";
 import { useState , useEffect } from "react";
+import Card from '../Component/Card/Card'
 
-export default function Header() {
+export default function Header({}) {
+    const [filter , setfilter]=useState('');
     const navigate=useNavigate();
     const [username , setusername]=useState('');
     useEffect (()=>{
@@ -29,7 +31,7 @@ export default function Header() {
 
                 <div className="flex gap5" >
                     <div className="h-10 w-[600px] border border-pink-900 shadow-md mt-5 rounded-full flex justify-between items-center px-8" >
-                        <input type="text" className="outline-none border-none bg-transparent placeholder:text-pink-900 " placeholder="Search the categories" />
+                        <input type="text" className="outline-none border-none bg-transparent placeholder:text-pink-900 " placeholder="Search the categories" onChange={(e)=>setfilter(e.target.value)} />
                         <IoSearch className="h-6  w-8 text-pink-900 " />
                     </div>
                 </div>
@@ -49,7 +51,7 @@ export default function Header() {
                     
                     }
                 
-
+             
 
             </div>
         </>
