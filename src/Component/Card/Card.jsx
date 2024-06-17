@@ -1,29 +1,30 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 
-export default function Card (){
+export default function Card ({filter}){
 
-
-
-    
-    const data = [
+    const [data,setdata]=useState([
         { id: '1', src: "/cooking.jpg", title: "Cooking" },
         { id: '2', src: "/art.jpg", title: "Art" },
         { id: '3', src: "/makeup.jpg", title: "Style" },
         { id: '4', src: "/health.jpg", title: "Health" },
-        { id: '5', src: "/digital-services.jpg", title: "Marketing" },
+        { id: '5', src: "/digital-services.jpg", title: "Marketing" },])
 
     
 
-    ]
 
-    // const filteredData = data.filter(item => item.title.toLowerCase().includes(filter.toLowerCase()));
+    
+   
     return (
+    <>
         <Marquee play speed={90} pauseOnHover={true}>
+              <Link to={'/categories'}>
         <div className="mt-10 flex  flex-wrap justify-center gap-14">
-         {data.map((item)=>(
+          
+         { data.map((item)=>(
               <div className="flex  ">
  
               <div key={item.id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
@@ -34,7 +35,11 @@ export default function Card (){
              </div>
      ))}
         </div>
+        </Link>
         </Marquee>
+
+        
+        </>
     )
 }
 

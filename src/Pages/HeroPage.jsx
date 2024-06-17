@@ -4,8 +4,10 @@ import { FaArrowRight } from "react-icons/fa";
 import Header from "../Component/Header";
 import Categories from "../Component/Categories";
 import Card from "../Component/Card/Card";
+import Marquee from "react-fast-marquee";
 
 export default function HeroPage() {
+    
    
     return (
         <>
@@ -25,7 +27,9 @@ export default function HeroPage() {
  
         </div >
 
-        <Card/>
+        <Marquee play speed={90} pauseOnHover={true}>
+       <Card/>
+       </Marquee>
         
         </>
     )
