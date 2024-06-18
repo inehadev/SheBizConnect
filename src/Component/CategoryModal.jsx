@@ -4,9 +4,38 @@ import axios from 'axios'
 
 
 function CategoryModal({ onClose }) {
-  const [file, setfile] = useState(null);
+  const [file, setfile] = useState('');
   const [type, settype] = useState('');
+ 
+  const username = localStorage.getItem('username')
+
+  function previewfile (file){
+
+   
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend=()=>{
+     setfile(reader.result);
+     console.log(reader.result)
+    }
+    
+  }
   
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+   
+    const selectedFile = file;
+    if (!selectedFile) {
+      console.error('No file selected.');
+      return;
+    }
+    // setfile(file);
+    previewfile(file);
+
+   
+  }
+
+
 
   const handleChange = async (e) => {
      
@@ -15,6 +44,7 @@ function CategoryModal({ onClose }) {
     try {
 
       const bodyparameter = {
+        posted_by:username,
         categoryType: type,
         image: file,
       }
@@ -38,26 +68,7 @@ function CategoryModal({ onClose }) {
     }
 
   }
-  function previewfile (){
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend=()=>{
-      setfile(reader.result);
-      console.log(file);
-    }
-  }
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    const selectedFile = file;
-    if (!selectedFile) {
-      console.error('No file selected.');
-      return;
-    }
-    setfile(file);
-    previewfile(file);
-    console.log(setfile);
-  };
-
+  
   return (
 <>
 
