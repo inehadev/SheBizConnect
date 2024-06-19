@@ -10,8 +10,6 @@ function CategoryModal({ onClose }) {
   const username = localStorage.getItem('username')
 
   function previewfile (file){
-
-   
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend=()=>{
@@ -29,7 +27,7 @@ function CategoryModal({ onClose }) {
       console.error('No file selected.');
       return;
     }
-    // setfile(file);
+   
     previewfile(file);
 
    
@@ -45,10 +43,10 @@ function CategoryModal({ onClose }) {
 
       const bodyparameter = {
         posted_by:username,
-        categoryType: type,
+        CategoryType: type,
         image: file,
       }
-      console.log(bodyparameter.categoryType); // Correctly accessing categoryType
+      console.log(bodyparameter.CategoryType); // Correctly accessing categoryType
       console.log(bodyparameter.image);
       const axiosheader = {
         headers: {
@@ -99,7 +97,7 @@ function CategoryModal({ onClose }) {
       </div>
     </div>
    
-    
+    {/* <CategoryModal response={response} /> */}
     </>
 
   )

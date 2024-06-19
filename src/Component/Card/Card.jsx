@@ -5,15 +5,25 @@ import { Link } from "react-router-dom";
 
 
 export default function Card ({filter}){
+    const [categories, setCategories] = useState([]);
 
-    const [data,setdata]=useState([
-        { id: '1', src: "/cooking.jpg", title: "Cooking" },
-        { id: '2', src: "/art.jpg", title: "Art" },
-        { id: '3', src: "/makeup.jpg", title: "Style" },
-        { id: '4', src: "/health.jpg", title: "Health" },
-        { id: '5', src: "/digital-services.jpg", title: "Marketing" },])
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await axios.get("http://localhost:4000/getCategory");
+                setCategories(response.data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
 
-    
+        fetchCategories();
+    }, []);
+
+    // const [data,setdata]=useState([
+    //     { id: category._id, src: {category.image}, title: {category.CategoryType} },
+    //    ])
+
 
 
     
@@ -24,12 +34,12 @@ export default function Card ({filter}){
               <Link to={'/categories'}>
         <div className="mt-10 flex  flex-wrap justify-center gap-14">
           
-         { data.map((item)=>(
+         { categories.map((item)=>(
               <div className="flex  ">
  
-              <div key={item.id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
-              <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.src} alt="img" />
-              <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.title}</p>
+              <div key={item._id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
+              <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.image} alt="img" />
+              <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.CategoryType}</p>
               </div>
             
              </div>
