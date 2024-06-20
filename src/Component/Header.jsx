@@ -61,14 +61,20 @@ export default function Header() {
 
                 {username ? (
                     <div className="mt-5">
-                        <Link className="mr-14 text-xl text-pink-900" to='/login' onClick={Logout}>Logout</Link>
+                        <Link className="mr-14 text-xl" to='/login' onClick={Logout}>
+                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Logout</button>
+                        </Link>
                         <span className="mr-14 text-xl text-pink-900">Hii {username}!👋</span>
 
                     </div>
                 ) : (
                     <div className="mt-5" >
-                        <Link className="mr-14 text-xl text-pink-900" to='/register'>Register</Link>
-                        <Link className="mr-14 text-xl text-pink-900" to='/login'>Login</Link>
+                       <Link className="mr-14 text-xl " to='/register' >
+                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Register</button>
+                        </Link>
+                        <Link className="mr-14 text-xl " to='/login' >
+                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Login</button>
+                        </Link>
                     </div>
                 )
 

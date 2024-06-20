@@ -75,7 +75,7 @@ function CategoryModal({ onClose }) {
       <div className='flex justify-center gap-32 '>
      
        
-        <button onClick={onClose} className=' ml-[60%] mt-[40px]'><X className='text-pink-900 ml-[320px]' size={30} /></button>
+        <button onClick={onClose} className=' ml-[10%] mt-[40px]'><X className='text-pink-900 ml-[320px]' size={30} /></button>
       </div>
       <div  className='flex gap-2'>
       { file &&(

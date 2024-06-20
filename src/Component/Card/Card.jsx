@@ -30,7 +30,7 @@ export default function Card ({filter}){
    
     return (
     <>
-        <Marquee play speed={90} pauseOnHover={true}>
+        <Marquee play speed={120} pauseOnHover={true}>
               <Link to={'/categories'}>
         <div className="mt-10 flex  flex-wrap justify-center gap-14">
           

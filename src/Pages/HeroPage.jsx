@@ -27,9 +27,9 @@ export default function HeroPage() {
  
         </div >
 
-        <Marquee play speed={90} pauseOnHover={true}>
+       
        <Card/>
-       </Marquee>
+
         
         </>
     )
