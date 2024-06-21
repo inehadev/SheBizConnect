@@ -97,7 +97,7 @@ function CategoryModal({ onClose }) {
       </div>
     </div>
    
-    {/* <CategoryModal response={response} /> */}
+    
     </>
 
   )
