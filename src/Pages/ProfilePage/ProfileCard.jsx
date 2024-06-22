@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../Component/Header'
+import { Link } from 'react-router-dom'
 
 function ProfileCard() {
     const data = [
@@ -16,7 +17,7 @@ function ProfileCard() {
 
         <>
             <Header />
-          <div className=' '><button className='place-item-end ml-[87%] mt-10 hover:text-white border border-pink-900 hover:bg-pink-900 px-2 py-1 rounded-md font-medium'>Create Profile</button></div>
+          <div className=' '><Link to={'/createprofile'}><button className='place-item-end ml-[87%] mt-10 hover:text-white border border-pink-900 hover:bg-pink-900 px-2 py-1 rounded-md font-medium'>Create Profile</button></Link></div>
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {data.map((item)=>(
 
