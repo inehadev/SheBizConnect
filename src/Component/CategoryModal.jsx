@@ -38,11 +38,11 @@ function CategoryModal({ onClose }) {
   const handleChange = async (e) => {
      
     const token = localStorage.getItem('x-auth-token');
-    console.log("working")
+   
     try {
 
       const bodyparameter = {
-        posted_by:username,
+        
         CategoryType: type,
         image: file,
       }
