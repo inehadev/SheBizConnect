@@ -42,7 +42,7 @@ function CategoryModal({ onClose }) {
     try {
 
       const bodyparameter = {
-        
+       
         CategoryType: type,
         image: file,
       }

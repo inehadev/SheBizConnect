@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Card ({filter}){
     const [categories, setCategories] = useState([]);
+    const  navigate=useNavigate();
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -20,32 +21,34 @@ export default function Card ({filter}){
         fetchCategories();
     }, []);
 
-    // const [data,setdata]=useState([
-    //     { id: category._id, src: {category.image}, title: {category.CategoryType} },
-    //    ])
-
-
+    
+    const handleCategoryClick = (categoryId) => {
+        console.log("all fine")
+        navigate(`/profile?category=${categoryId}`);
+    };
 
     
    
     return (
     <>
         <Marquee play speed={120} pauseOnHover={true}>
-              <Link to={'/categories'}>
+             
         <div className="mt-10 flex  flex-wrap justify-center gap-14">
           
          { categories.map((item)=>(
               <div className="flex  ">
  
-              <div key={item._id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 ">
-              <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.image} alt="img" />
+              <div key={item._id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 " >
+              <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
+                 <img className="border border-pink-900 h-[160px] rounded-xl"src={item.image}alt="img"/>
+               {/* <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.image} alt="img" /> */}
               <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.CategoryType}</p>
               </div>
-            
+            </div>
              </div>
      ))}
         </div>
-        </Link>
+       
         </Marquee>
 
         

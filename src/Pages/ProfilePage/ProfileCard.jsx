@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
-import { Link } from 'react-router-dom'
+import { Link , useLocation } from 'react-router-dom'
 import axios from 'axios';
 
 function ProfileCard() {
     const [profile , setprofile]=useState([]);
+    const location = useLocation();
     useEffect(()=>{
-       
+           
             const getCategory =async()=>{
                 try {
                 const response = await axios.get('http://localhost:4000/getprofile');
@@ -27,16 +28,33 @@ function ProfileCard() {
     getCategory();
         
     } , []);
-    // const data = [
-    //     // {id:'1 ', src: '/nan.jpg ' , title :'Tasty & Spicy Food ' , rating:'3.4⭐' , type:'Dining' , category:'North Indian, South Indian, fast food', location:'Town hall ,  Amritsar'},
-    //     // {id:'2', src: '/burger.jpg ' , title :'Tasty & Spicy Food ' , rating:'3.4⭐' , type:'Dining' , category:'North Indian, South Indian, fast food', location:'Town hall ,  Amritsar'},
-    //     // {id:'3 ', src: '/sandwich.jpg ' , title :'Tasty & Spicy Food ' , rating:'3.4⭐' , type:'Dining' , category:'North Indian, South Indian, fast food', location:'Town hall ,  Amritsar'},
-    //     // {id:'4', src: '/paneer.jpg ' , title :'Tasty & Spicy Food ' , rating:'3.4⭐' , type:'Dining' , category:'North Indian, South Indian, fast food', location:'Town hall ,  Amritsar'},
-    //     // {id:'5 ', src: '/sandwich.jpg ' , title :'Tasty & Spicy Food ' , rating:'3.4⭐' , type:'Dining' , category:'North Indian, South Indian, fast food', location:'Town hall ,  Amritsar'}
 
-        
-        
-    // ]
+
+    //     const fetchProfiles = async () => {
+    //         try {
+    //             const categoryId = new URLSearchParams(location.search).get('category');
+    //             const subcategory = 'cooking'; // Specify your subcategory here (e.g., 'cooking')
+
+    //             if (!categoryId) {
+    //                 console.error('No category ID provided.');
+    //                 return;
+    //             }
+
+    //             const response = await axios.get(`http://localhost:4000/getProfilesBySubcategory?categoryId=${categoryId}&subcategory=${subcategory}`);
+    //             if (Array.isArray(response.data.profiles)) {
+    //                 setprofile(response.data.profiles);
+    //             } else {
+    //                 console.error("Response data 'profiles' is not an array", response.data);
+    //             }
+    //         } catch (error) {
+    //             console.error("Error fetching profiles:", error);
+    //         }
+    //     };
+
+    //     fetchProfiles();
+    // }, [location.search]);
+
+   
 
     return (
 
