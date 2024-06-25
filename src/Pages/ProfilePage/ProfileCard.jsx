@@ -3,21 +3,34 @@ import Header from '../../Component/Header'
 import { Link , useLocation } from 'react-router-dom'
 import axios from 'axios';
 
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+
 function ProfileCard() {
     const [profile , setprofile]=useState([]);
-    const location = useLocation();
+  
+
+   
+
+      const query = useQuery();
+      const category = 'Cooking'; 
+
     useEffect(()=>{
            
             const getCategory =async()=>{
                 try {
-                const response = await axios.get('http://localhost:4000/getprofile');
-                // setprofile(response.data);
+                    console.log("fine");
+                    const response = await axios.get(`http://localhost:4000/getsubcategory`, {
+                        params: { categoryType: category ,  subcategory: category  } // Adjust the subcategory dynamically if needed
+                      });
+                      console.log("good")
                 console.log(response.data)
-                if (Array.isArray(response.data.allprofile)) {
-                    setprofile(response.data.allprofile);
-                } else {
-                    console.error("Response data 'allprofile' is not an array", response.data);
-                }
+                // if (Array.isArray(response.data)) {
+                //     setprofile(response.data);
+                // } else {
+                //     console.error("Response data 'allprofile' is not an array", response.data);
+                // }
                
             
         } catch (error) {
@@ -25,9 +38,11 @@ function ProfileCard() {
             
         }
     };
+   if(category){
     getCategory();
+   }
         
-    } , []);
+    } , [category]);
 
 
     //     const fetchProfiles = async () => {

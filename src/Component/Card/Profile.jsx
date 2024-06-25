@@ -12,22 +12,6 @@ function Profile() {
     const [SelectedOption ,setSelectedOption]=useState('');
     const navigate = useNavigate();
   
-    useEffect(() => {
-      const fetchCategories = async () => {
-          try {
-              const response = await axios.get("http://localhost:4000/getCategory");
-              setCategories(response.data);
-          } catch (error) {
-              console.error("Error fetching categories:", error);
-          }
-      };
-  
-      fetchCategories();
-  }, []);
-  
-  
-  
-  
   
     const handleOptionChange = (e) => {
       console.log('working')

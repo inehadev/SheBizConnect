@@ -22,9 +22,9 @@ export default function Card ({filter}){
     }, []);
 
     
-    const handleCategoryClick = (categoryId) => {
+    const handleCategoryClick = (categoryType) => {
         console.log("all fine")
-        navigate(`/profile?category=${categoryId}`);
+        navigate(`/profile?category=${categoryType}`);
     };
 
     
