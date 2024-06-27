@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
-import { Link , useLocation } from 'react-router-dom'
+import { Link , useLocation, useParams } from 'react-router-dom'
 import axios from 'axios';
 
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
 
 function ProfileCard() {
+   const url = new URL(window.location.href);
+
+const category = url.searchParams.get('category');
+
+console.log(category);
+
     const [profile , setprofile]=useState([]);
-  
-
-   
-
-      const query = useQuery();
-      const category = 'Cooking'; 
+    
 
     useEffect(()=>{
            
             const getCategory =async()=>{
                 try {
-                    console.log("fine");
+                   
                     const response = await axios.get(`http://localhost:4000/getsubcategory`, {
-                        params: { categoryType: category ,  subcategory: category  } // Adjust the subcategory dynamically if needed
+                        params: { categoryId: category } 
                       });
-                      console.log("good")
+                     
                 console.log(response.data)
-                // if (Array.isArray(response.data)) {
-                //     setprofile(response.data);
-                // } else {
-                //     console.error("Response data 'allprofile' is not an array", response.data);
-                // }
+                if (Array.isArray(response.data)) {
+                    setprofile(response.data);
+                } else {
+                    console.error("Response data 'allprofile' is not an array", response.data);
+                }
                
             
         } catch (error) {
@@ -45,31 +43,7 @@ function ProfileCard() {
     } , [category]);
 
 
-    //     const fetchProfiles = async () => {
-    //         try {
-    //             const categoryId = new URLSearchParams(location.search).get('category');
-    //             const subcategory = 'cooking'; // Specify your subcategory here (e.g., 'cooking')
-
-    //             if (!categoryId) {
-    //                 console.error('No category ID provided.');
-    //                 return;
-    //             }
-
-    //             const response = await axios.get(`http://localhost:4000/getProfilesBySubcategory?categoryId=${categoryId}&subcategory=${subcategory}`);
-    //             if (Array.isArray(response.data.profiles)) {
-    //                 setprofile(response.data.profiles);
-    //             } else {
-    //                 console.error("Response data 'profiles' is not an array", response.data);
-    //             }
-    //         } catch (error) {
-    //             console.error("Error fetching profiles:", error);
-    //         }
-    //     };
-
-    //     fetchProfiles();
-    // }, [location.search]);
-
-   
+       
 
     return (
 

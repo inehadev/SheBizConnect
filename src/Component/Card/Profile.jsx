@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 function Profile() {
+
+  
     const[title , settitle]=useState('');
     const[file , setfile]=useState('');
     const[typeofp , settype]=useState('');
@@ -11,6 +13,21 @@ function Profile() {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [SelectedOption ,setSelectedOption]=useState('');
     const navigate = useNavigate();
+
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await axios.get("http://localhost:4000/getCategory");
+                setCategories(response.data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchCategories();
+    }, []);
+
   
   
     const handleOptionChange = (e) => {
@@ -62,7 +79,7 @@ function Profile() {
           typeofp: typeofp,
           location: location,
           categoryId: selectedCategoryObj._id,
-          categoryType: selectedCategoryObj.CategoryType
+          
         }
   
         const axiosheader = {
@@ -102,7 +119,7 @@ function Profile() {
   <div className='ml-8 mt-6 border border-pink-900 mr-14'>
                       <select className='w-full px-5 focus:outline-none bg-transparent py-[2.5px] placeholder:text-sm placeholder:text-pink-900 rounded-sm'
                           onChange={handleOptionChange}>
-                         <option value={"selected"} label='select category'></option>
+                        <option value={"selected"} label='select category'></option>
                          {categories.map(category => (
                           
                       <option key={category._id} value={category._id}>
