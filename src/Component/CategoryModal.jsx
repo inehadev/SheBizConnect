@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import { X } from 'lucide-react'
 import axios from 'axios'
 
@@ -6,6 +6,20 @@ import axios from 'axios'
 function CategoryModal({ onClose }) {
   const [file, setfile] = useState('');
   const [type, settype] = useState('');
+  
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/getCategory");
+            setCategories(response.data);
+        } catch (error) {
+            console.error("Error fetching categories:", error);
+        }
+    };
+
+    fetchCategories();
+}, []);
  
   const username = localStorage.getItem('username')
 

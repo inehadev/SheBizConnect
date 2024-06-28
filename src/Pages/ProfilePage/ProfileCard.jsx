@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
-import { Link , useLocation, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -15,26 +15,23 @@ console.log(category);
     
 
     useEffect(()=>{
-           
+         
             const getCategory =async()=>{
                 try {
-                   
-                    const response = await axios.get(`http://localhost:4000/getsubcategory`, {
-                        params: { categoryId: category } 
-                      });
-                     
-                console.log(response.data)
-                if (Array.isArray(response.data)) {
-                    setprofile(response.data);
-                } else {
-                    console.error("Response data 'allprofile' is not an array", response.data);
-                }
-               
+                   console.log("working");
+                    const response = await axios.get(`http://localhost:4000/getsubcategory/${category}`);
+                     console.log("good");
+                    console.log(response.data);
+
+                    if (response.data && response.data.profiles) {
+                      setprofile(response.data.profiles);
+                    } else {
+                      console.error("Response data does not contain 'profiles'", response.data);
+                    }
+                  } catch (error) {
+                    console.log({ message: "Integration error of get category", error });
+                  }
             
-        } catch (error) {
-            console.log({message:"integration error of get category" , error});
-            
-        }
     };
    if(category){
     getCategory();
@@ -62,7 +59,7 @@ console.log(category);
                     <h3 className='text-xl font-medium  text-pink-900 '>{item.title}</h3>
                     {/* <span className='  px-1 rounded-lg'>{item.rating}</span> */}
                     <span className='font-normal ml-2'>{item.type}</span>
-                    {/* <p className='mt-1'> {item.category}</p> */}
+                    <p className='mt-1'> {item.typeofp}</p>
                     <p className='mt-1 mb-3'>{item.location}</p>
 
                 </div>

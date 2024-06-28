@@ -91,7 +91,7 @@ function Profile() {
   
       const response = await axios.post('http://localhost:4000/create' , bodyParameter , axiosheader);
       console.log(response);
-      navigate('/profile')
+      navigate(`/profile?category=${categoryType}`);
       
         
       } catch (error) {
