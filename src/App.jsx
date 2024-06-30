@@ -8,6 +8,7 @@ import Login from './Component/Login'
 import CategoryModal from './Component/CategoryModal'
 import ProfileCard from './Pages/ProfilePage/ProfileCard'
 import Profile from './Component/Card/Profile'
+import VisitProfile from './Pages/ProfilePage/VisitProfile'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path='/addcategory' element ={<CategoryModal/>} />
       <Route path='/profile' element ={<ProfileCard/>} />
       <Route path='/createprofile' element={<Profile/>}/>
+      <Route path='/profilet' element={<VisitProfile/>} />
 
 
     </Routes>
