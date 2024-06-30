@@ -28,7 +28,7 @@ function App() {
       <Route path='/addcategory' element ={<CategoryModal/>} />
       <Route path='/profile' element ={<ProfileCard/>} />
       <Route path='/createprofile' element={<Profile/>}/>
-      <Route path='/profilet' element={<VisitProfile/>} />
+      <Route path='/visitprofile' element={<VisitProfile/>} />
 
 
     </Routes>

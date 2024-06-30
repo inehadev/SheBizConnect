@@ -5,6 +5,7 @@ import Header from '../../Component/Header'
 
     const url = new URL(window.location.href);
     const profile= url.searchParams.get('profile')
+    console.log('profile')
 
     useEffect (()=>{
 
@@ -12,15 +13,16 @@ import Header from '../../Component/Header'
            
             try{
                 const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
-                console.log(response)
+                console.log(response.data)
             }
             catch(error){
                 console.log("error in get profile"  , error )
             }
 
         }
+        handleProfile();
 
-    } , [])
+    } , [profile])
 
     return (
         <>

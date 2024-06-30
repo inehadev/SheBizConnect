@@ -19,9 +19,9 @@ console.log(category);
          
             const getCategory =async()=>{
                 try {
-                   console.log("working");
+                   
                     const response = await axios.get(`http://localhost:4000/getsubcategory/${category}`);
-                     console.log("good");
+                     
                     console.log(response.data);
 
                     if (response.data && response.data.profiles) {
@@ -45,8 +45,8 @@ console.log(category);
     
 
     const handleprofileclick = (profileId)=>{
-      console.log( "profileId is " , profileId);
-      navigate(`/profile/${profileId}`);
+     
+      navigate(`/visitprofile/${profileId}`);
     }
   
 
