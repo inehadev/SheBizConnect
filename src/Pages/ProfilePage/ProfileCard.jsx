@@ -77,7 +77,7 @@ console.log(category);
                 </div>
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{item.title}</h3>
-                    {/* <span className='  px-1 rounded-lg'>{item.rating}⭐</span> */}
+                    <span className='  px-1 rounded-lg'>{item.rating.number}</span>
                     {/* <span className='font-normal ml-2'>{item.type}</span> */}
                     <p className='mt-1'> {item.typeofp}</p>
                     <p className='mt-1 mb-3'>{item.location}</p>

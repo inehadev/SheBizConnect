@@ -6,9 +6,11 @@
     .bg-gray {
       background-color: theme('colors.bg-gray');
     }
-
+   
   }
   
   body {
       @apply bg-gray;
+ 
+
   }

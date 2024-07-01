@@ -11,7 +11,10 @@ export default {
    },
    colors:{
     'bg-gray': '#fff1f2'
-   }
+   },
+   backgroundImage: {
+    'custom-image': "url('/girl-.jpg')",
+  },
     },
   },
   plugins: [],

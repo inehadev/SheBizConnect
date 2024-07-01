@@ -49,7 +49,7 @@ if(loading){
         
         <Header />
         <div className=' justify-center    mt-[10%] ml-[35%]'>
-        {/* <div   key = {Profile.id} className='bg-pink-100  '> */}
+        
                 <div  className='  rounded-sm'>
                     <img   className='h-[200px]  rounded-md
                     ' src={Profile.img} alt="" />
@@ -57,11 +57,11 @@ if(loading){
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
                     <span className='  px-1 rounded-lg'>{Profile.rating}</span>
-                    {/* <span className='font-normal ml-2'>{item.type}</span> */}
+                  <input type="text" />
                     <p className='mt-1'> {Profile.typeofp}</p>
                     <p className='mt-1 mb-3'>{Profile.location}</p>
 
-                {/* </div> */}
+             
 
 
             </div>
