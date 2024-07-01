@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { MapPin } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import Header from '../../Component/Header'
+import { useState } from "react";
+import axios from "axios";
    export default function  VisitProfile  ()  {
 
     const url = new URL(window.location.href);
     const profile= url.searchParams.get('profile')
-    console.log('profile')
-
+    console.log(profile)
+    const [Profile  , setProfile]=useState();
+    const [loading , setloading]=useState(true);
     useEffect (()=>{
 
         const handleProfile = async()=>{
@@ -14,9 +18,14 @@ import Header from '../../Component/Header'
             try{
                 const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
                 console.log(response.data)
+                if(response){
+                    setProfile(response.data);
+                }
             }
             catch(error){
                 console.log("error in get profile"  , error )
+            }finally{
+                setloading(false);
             }
 
         }
@@ -24,36 +33,48 @@ import Header from '../../Component/Header'
 
     } , [profile])
 
+if(loading){
+    return (
+        <div className="mt-[50%] ml-[50%] text-3xl ">L  <Loader  size={40}/></div>
+    )
+}
+ 
+       
+    
+
+
     return (
         <>
 
         
         <Header />
-
-          <div  className=' '><button className='place-item-end ml-[87%] mt-10 hover:text-white border border-pink-900 hover:bg-pink-900 px-2 py-1 rounded-md font-medium'>Create Profile</button></div>
-      <div className='flex flex-wrap justify-center gap-8 mt-14'>
-      
-
-          <div   className='bg-pink-100 ml-9   '>
-                <div    className='  rounded-sm'>
-                    <img     className='h-[200px] rounded-lg border  border-pink-900 border-2px
-                    ' src='/saloon.jpg' alt="" />
+        <div className=' justify-center    mt-[10%] ml-[35%]'>
+        {/* <div   key = {Profile.id} className='bg-pink-100  '> */}
+                <div  className='  rounded-sm'>
+                    <img   className='h-[200px]  rounded-md
+                    ' src={Profile.img} alt="" />
                 </div>
                 <div className='ml-5 mt-2 '  >
-                    <h3 className='text-xl font-medium  text-pink-900 '>Hair Saloon</h3>
-                    <span className='  px-1 rounded-lg'>⭐</span>
+                    <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
+                    <span className='  px-1 rounded-lg'>{Profile.rating}</span>
                     {/* <span className='font-normal ml-2'>{item.type}</span> */}
-                    <p className='mt-1'> salon</p>
-                    <p className='mt-1 mb-3'>    <MapPin />Amritsar town road </p>
+                    <p className='mt-1'> {Profile.typeofp}</p>
+                    <p className='mt-1 mb-3'>{Profile.location}</p>
 
-                </div>
+                {/* </div> */}
 
 
             </div>
-        
             </div>
 
-       
+         
+         
+           
+              
+
+
+          
+           
         
         </>
     )

@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import {Loader} from 'lucide-react'
 import Marquee from "react-fast-marquee";
 import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Card ({filter}){
     const [categories, setCategories] = useState([]);
+    const [loading , setloading]=useState(true);
     const  navigate=useNavigate();
 
     useEffect(() => {
@@ -15,6 +17,8 @@ export default function Card ({filter}){
                 setCategories(response.data);
             } catch (error) {
                 console.error("Error fetching categories:", error);
+            }finally{
+                setloading(false);
             }
         };
 
@@ -22,6 +26,12 @@ export default function Card ({filter}){
     }, []);
 
     
+   
+if(loading){
+    return (
+        <div className="mt-[50%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
+    )
+}
     const handleCategoryClick = (categoryType) => {
         console.log("all fine")
         navigate(`/profile?category=${categoryType}`);

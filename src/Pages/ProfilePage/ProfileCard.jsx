@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
+import { Loader } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ const category = url.searchParams.get('category');
 console.log(category);
 
     const [profile , setprofile]=useState([]);
-    
+    const [loading , setloading]=useState(true);
 
     useEffect(()=>{
          
@@ -31,6 +32,8 @@ console.log(category);
                     }
                   } catch (error) {
                     console.log({ message: "Integration error of get category", error });
+                  }finally{
+                    setloading(false);
                   }
             
     };
@@ -42,11 +45,16 @@ console.log(category);
 
     
 
+    if(loading){
+      return (
+          <div className="mt-[50%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
+      )
+  }
     
 
     const handleprofileclick = (profileId)=>{
-     
-      navigate(`/visitprofile/${profileId}`);
+      
+      navigate(`/visitprofile?profile=${profileId}`);
     }
   
 
@@ -64,12 +72,12 @@ console.log(category);
 
           <div   className='bg-pink-100 ml-9   '>
                 <div key={item._id}   className='  rounded-sm'>
-                    <img  onClick={() => handleprofileclick(item._id)}   className='h-[200px] rounded-lg border  border-pink-900 border-2px
+                    <img  onClick={() => handleprofileclick(item._id)}   className='h-[200px] rounded-md
                     ' src={item.img} alt="" />
                 </div>
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{item.title}</h3>
-                    <span className='  px-1 rounded-lg'>{item.rating}⭐</span>
+                    {/* <span className='  px-1 rounded-lg'>{item.rating}⭐</span> */}
                     {/* <span className='font-normal ml-2'>{item.type}</span> */}
                     <p className='mt-1'> {item.typeofp}</p>
                     <p className='mt-1 mb-3'>{item.location}</p>
