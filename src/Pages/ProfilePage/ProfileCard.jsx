@@ -47,7 +47,7 @@ console.log(category);
 
     if(loading){
       return (
-          <div className="mt-[50%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
+          <div className="mt-[25%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
       )
   }
     
@@ -70,14 +70,14 @@ console.log(category);
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {profile.map((item)=>(
 
-          <div   className='bg-pink-100 ml-9   '>
-                <div key={item._id}   className='  rounded-sm'>
-                    <img  onClick={() => handleprofileclick(item._id)}   className='h-[200px] rounded-md
+          <div   className='bg-rose-50 ml-9  h-[300px]  '>
+                <div key={item._id}   className=' w-[300px] h-[170px]  rounded-sm'>
+                    <img  onClick={() => handleprofileclick(item._id)}   className='rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-200
                     ' src={item.img} alt="" />
                 </div>
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{item.title}</h3>
-                    <span className='  px-1 rounded-lg'>{item.rating.number}</span>
+                    {/* <span className='  px-1 rounded-lg'>{item.rating.number}</span> */}
                     {/* <span className='font-normal ml-2'>{item.type}</span> */}
                     <p className='mt-1'> {item.typeofp}</p>
                     <p className='mt-1 mb-3'>{item.location}</p>

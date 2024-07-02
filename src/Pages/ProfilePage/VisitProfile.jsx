@@ -33,11 +33,11 @@ import axios from "axios";
 
     } , [profile])
 
-if(loading){
-    return (
-        <div className="mt-[50%] ml-[50%] text-3xl ">L  <Loader  size={40}/></div>
-    )
-}
+    if(loading){
+        return (
+            <div className="mt-[25%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
+        )
+    }
  
        
     
@@ -57,7 +57,7 @@ if(loading){
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
                     <span className='  px-1 rounded-lg'>{Profile.rating}</span>
-                  <input type="text" />
+                  <input className="m" type="text" />
                     <p className='mt-1'> {Profile.typeofp}</p>
                     <p className='mt-1 mb-3'>{Profile.location}</p>
 

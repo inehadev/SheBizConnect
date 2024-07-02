@@ -29,7 +29,7 @@ export default function Card ({filter}){
    
 if(loading){
     return (
-        <div className="mt-[50%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
+        <div className="mt-[25%] ml-[50%] text-3xl ">  <Loader  size={40}/></div>
     )
 }
     const handleCategoryClick = (categoryType) => {
@@ -48,11 +48,11 @@ if(loading){
          { categories.map((item)=>(
               <div className="flex  ">
  
-              <div key={item._id} className=  " border  border-pink-900  rounded-xl mt-10 h-[200px]    mb-7 " >
+              <div key={item._id} className=  " border  border-pink-900  rounded-md mt-10 h-[210px]    mb-7 " >
               <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
-                 <img className="border border-pink-900 h-[160px]  rounded-xl"src={item.image}alt="img"/>
-               {/* <img className="  border  border-pink-900  h-[160px]  rounded-xl "  src={item.image} alt="img" /> */}
-              <p className="text-xl mt-2 text-pink-900 shadow-md  ml-7 font-weigh-5 " > {item.CategoryType}</p>
+                 <img className=" h-[160px] w-full rounded-md"src={item.image}alt="img"/>
+               
+              <p className="text-xl mt-2 text-pink-900  font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
               </div>
             </div>
              </div>

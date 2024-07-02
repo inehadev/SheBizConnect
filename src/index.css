@@ -4,13 +4,13 @@
 
 @layer utilities {
     .bg-gray {
-      background-color: theme('colors.bg-gray');
+      background-color:  #fffafa;
     }
    
   }
   
   body {
-      @apply bg-gray;
- 
+     
+ @apply bg-gray
 
   }

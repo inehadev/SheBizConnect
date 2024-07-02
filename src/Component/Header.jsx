@@ -47,20 +47,20 @@ export default function Header() {
     }
     return (
         <>
-            <div className="h-12 flex justify-between  font-poppins" >
-                <div className="mt-7">
+            <div className="h-12 flex justify-between  mt-2 font-poppins" >
+                <div className="mt-8">
                     <h2 className="ml-14 text-3xl font-family-aerial text-pink-900 font-medium " ><Link to='/'>SheBizConnect</Link></h2>
                 </div>
 
-                <div className="flex gap5" >
-                    <div className="h-10 w-[600px] border border-pink-900 shadow-md mt-5 rounded-full flex justify-between items-center px-8" >
+                <div className="flex gap-5 " >
+                    <div className="h-10 w-[600px] border border-pink-900 shadow-md focus-within:scale-110 mt-8 rounded-full flex justify-between items-center px-8" >
                         <input type="text" className="outline-none border-none bg-transparent placeholder:text-pink-900 " placeholder="Search the categories" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                         <IoSearch className="h-6  w-8 text-pink-900 " />
                     </div>
                 </div>
 
                 {username ? (
-                    <div className="mt-5">
+                    <div className="mt-8">
                         <Link className="mr-14 text-pink-900 text-xl" to='/login' onClick={Logout}>
                         <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Logout</button>
                         </Link>
