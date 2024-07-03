@@ -40,6 +40,24 @@ import axios from "axios";
     }
  
        
+    const getStarRatingRepresentation = (rating) => {
+        if (rating === 1) {
+          return '⭐';
+        } else if (rating === 2) {
+          return '⭐⭐';
+        } else if (rating === 3) {
+          return '⭐⭐⭐'; // Special condition for 3 stars
+        } else if (rating === 4) {
+          return '⭐⭐⭐⭐';
+        } else if (rating === 5) {
+          return '⭐⭐⭐⭐⭐';
+        } else {
+          return 'Rating not available';
+        }
+      };
+    
+     
+    
     
 
 
@@ -48,7 +66,8 @@ import axios from "axios";
 
         
         <Header />
-        <div className=' justify-center    mt-[10%] ml-[35%]'>
+        {/* <div className="flex justify-around mt-[10%] items-center ">
+        <div className=' justify-center '>
         
                 <div  className='  rounded-sm'>
                     <img   className='h-[200px]  rounded-md
@@ -56,16 +75,52 @@ import axios from "axios";
                 </div>
                 <div className='ml-5 mt-2 '  >
                     <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
-                    <span className='  px-1 rounded-lg'>{Profile.rating}</span>
-                  <input className="m" type="text" />
+                    <span className='  px-1 rounded-lg'>  {Profile.ratings && Profile.ratings.length > 0 ? Profile.ratings.map(rating => getStarRatingRepresentation(rating)).join(', ') : 'No ratings yet'}</span>
+                 
                     <p className='mt-1'> {Profile.typeofp}</p>
                     <p className='mt-1 mb-3'>{Profile.location}</p>
+            </div>
+            </div> */}
+        
+            {/* <div className=' justify-center gap-2 flex  h-[400px]  mt-[10%]  '>
 
+             <div className="w-[500px]  ">
+              <img className="object-cover w-[500px] h-[400px]" src="/cake.jpg" alt="" />
+             </div>
+
+             <div className=" flex-col w-[300px] gap-2  bg-white  ">
+             <div className=" h-[200px]">
+             <img className="object-cover w-[300px]" src="/paneer.jpg" alt="" />
+             </div>
+             <div className="h-[200px] ">
+             <img className="object-cover" src="/nan.jpg" alt="" />
+             </div>
+             </div>
              
+             <div className=" w-[250px]">
+              <img className="object-cover w-[300px] h-[400px]" src="/burger.jpg" alt="" />
+              </div>
+             
+      
+            </div>
+
+             */}
+
+             <div className="grid grid-cols-3 justify-center items-center">
+              <div>item1</div>
+              <div>
+              <div>
+
+              </div>
+              <div>
+
+              </div>
+              </div>
+              <div>item3</div>
 
 
-            </div>
-            </div>
+             </div>
+            
 
          
          
