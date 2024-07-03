@@ -15,8 +15,17 @@ export default {
    backgroundImage: {
     'custom-image': "url('/girl-.jpg')",
   },
-    },
+  gridTemplateColumns: {
+    'col': '500px 300px 300px',
   },
+  gridTemplateRows: {
+    'row': '200px 200px',
+  },
+},
+},
+  
+ 
+  
   plugins: [],
 }
 

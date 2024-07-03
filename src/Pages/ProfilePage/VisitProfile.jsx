@@ -66,60 +66,39 @@ import axios from "axios";
 
         
         <Header />
-        {/* <div className="flex justify-around mt-[10%] items-center ">
-        <div className=' justify-center '>
+        <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " />
+        <div className=" justify-around mt-[2%]   items-center ">
+       
+         
+
+             <div className="grid grid-cols-col gap-2   h-[400px]  mt-[5%] justify-center it">
+              <div className=" "><img className="object-cover w-full h-full hover:scale-90 traslate-all duration-100" src="/cake.jpg" alt="" /></div>
+              <div className="grid grid-rows-row gap-2">
+              <div className="">
+                 <img   className="object-cover hover:scale-90 traslate-all duration-100 w-full h-full" src="/paneer.jpg" alt="" />
+              </div>
+              <div>
+                   <img  className="object-cover hover:scale-90 traslate-all duration-100" src="nan.jpg" alt="" />
+              </div>
+              </div>
+              <div className="">
+                <img  className="object-cover w-full h-full hover:scale-90 traslate-all duration-100 " src="burger.jpg" alt="" />
+              </div>
+             </div>
+
+
+             <div className=' justify-center '>
         
-                <div  className='  rounded-sm'>
-                    <img   className='h-[200px]  rounded-md
-                    ' src={Profile.img} alt="" />
-                </div>
-                <div className='ml-5 mt-2 '  >
-                    <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
-                    <span className='  px-1 rounded-lg'>  {Profile.ratings && Profile.ratings.length > 0 ? Profile.ratings.map(rating => getStarRatingRepresentation(rating)).join(', ') : 'No ratings yet'}</span>
-                 
-                    <p className='mt-1'> {Profile.typeofp}</p>
-                    <p className='mt-1 mb-3'>{Profile.location}</p>
-            </div>
-            </div> */}
-        
-            {/* <div className=' justify-center gap-2 flex  h-[400px]  mt-[10%]  '>
+                
+        <div className='ml-5 mt-2 '  >
+            <h3 className='text-xl font-medium  text-pink-900 '>{Profile.title}</h3>
+            <span className='  px-1 rounded-lg'>  {Profile.ratings && Profile.ratings.length > 0 ? Profile.ratings.map(rating => getStarRatingRepresentation(rating)).join(', ') : 'No ratings yet'}</span>
+         
+            <p className='mt-1'> {Profile.typeofp}</p>
+            <p className='mt-1 mb-3'>{Profile.location}</p>
+    </div>
+    </div>
 
-             <div className="w-[500px]  ">
-              <img className="object-cover w-[500px] h-[400px]" src="/cake.jpg" alt="" />
-             </div>
-
-             <div className=" flex-col w-[300px] gap-2  bg-white  ">
-             <div className=" h-[200px]">
-             <img className="object-cover w-[300px]" src="/paneer.jpg" alt="" />
-             </div>
-             <div className="h-[200px] ">
-             <img className="object-cover" src="/nan.jpg" alt="" />
-             </div>
-             </div>
-             
-             <div className=" w-[250px]">
-              <img className="object-cover w-[300px] h-[400px]" src="/burger.jpg" alt="" />
-              </div>
-             
-      
-            </div>
-
-             */}
-
-             <div className="grid grid-cols-3 justify-center items-center">
-              <div>item1</div>
-              <div>
-              <div>
-
-              </div>
-              <div>
-
-              </div>
-              </div>
-              <div>item3</div>
-
-
-             </div>
             
 
          
@@ -128,7 +107,7 @@ import axios from "axios";
               
 
 
-          
+          </div>
            
         
         </>

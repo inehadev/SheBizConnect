@@ -72,7 +72,7 @@ console.log(category);
 
           <div   className='bg-rose-50 ml-9  h-[300px]  '>
                 <div key={item._id}   className=' w-[300px] h-[170px]  rounded-sm'>
-                    <img  onClick={() => handleprofileclick(item._id)}   className='rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-200
+                    <img  onClick={() => handleprofileclick(item._id)}   className='rounded-md w-full h-full object-cover hover:scale-90 transition-all duration-200
                     ' src={item.img} alt="" />
                 </div>
                 <div className='ml-5 mt-2 '  >
