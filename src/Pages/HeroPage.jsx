@@ -16,7 +16,7 @@ export default function HeroPage() {
         <>
             <Header />
       
-        <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8  bg-center h-[570px] bg-contain   bg-opacity-0 flex justify-center items-center  font-poppins "  >
+        <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain    flex justify-center items-center  font-poppins "  >
             <div className="" >
                 <div className="text-6xl font-medium text-pink-900  ">
                    <span className=" shadow-sm">Unlock Women's Potential,</span> 
@@ -27,10 +27,7 @@ export default function HeroPage() {
                  </div>
                 
             </div>
-            {/* <div className="">
-                <img  className="h-[350px]" src="/girl-.jpg"/>
-            </div>
-  */}
+     
         </div >
 
         <div class="text-center mt-2 ">
