@@ -5,6 +5,8 @@ import Card from "./Card/Card";
 import { IoMdAdd } from "react-icons/io";
 import CategoryModal from "./CategoryModal";
 import { Link } from "react-router-dom";
+import BreadScrumb from "./BreadScrumb/BreadScrumb";
+
 
 
 export default function Categories() {
@@ -14,6 +16,7 @@ const [showModal , setMoadal]=useState(false);
   return (
     <>
       <Header />
+      <BreadScrumb/>
 
       <div>
         <div className="flex justify-between">

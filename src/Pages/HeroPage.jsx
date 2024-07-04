@@ -47,7 +47,7 @@ export default function HeroPage() {
 
 
        
-       <Card/>
+      <Link to={'/categories'}> <Card/></Link>
 
         
         </>

@@ -2,10 +2,14 @@ import React, { useEffect } from "react";
 import { MapPin } from 'lucide-react';
 import { Loader } from 'lucide-react';
 import Header from '../../Component/Header'
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import axios from "axios";
+import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
+
    export default function  VisitProfile  ()  {
+   
 
     const url = new URL(window.location.href);
     const profile= url.searchParams.get('profile')
@@ -67,12 +71,14 @@ import axios from "axios";
 
         
         <Header />
-        <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " />
+        <BreadScrumb/>
+        
+        {/* <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " /> */}
         <div className=" justify-around mt-[2%]    items-center ">
        
          
 
-             <div className="grid grid-cols-col gap-1  h-[400px]  mt-[5%] justify-center it">
+             <div className="grid grid-cols-col gap-1  h-[400px]  mt-[8%] justify-center it">
               <div className=" "><img className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 traslate-all duration-100" src="/cake.jpg" alt="" /></div>
               <div className="grid grid-rows-row gap-2">
               <div className="">
@@ -91,15 +97,17 @@ import axios from "axios";
              <div className=' justify-center '>
         
                 
-        <div className='ml-5 mt-2 flex justify-between m-28 '  >
-           <div className="ml-24 mt-2"> <h3 className='text-3xl font-medium   text-pink-900 '>{Profile.title}</h3>
-           <p className=''> {Profile.typeofp}</p>
+        <div className='ml-5 mt-2 flex  justify-start  m-36'  >
+           <div className="ml-24 mt-2 font-poppins"> <h3 className='text-3xl font-medium   text-pink-900 '>{Profile.title}</h3>
+           <p className='text-xl text-pink-900 font-poppins'> {Profile.typeofp}</p>
+           <p className='font-poppins text-pink-900' >{Profile.location}</p>
          
           </div>
          
-           <div className="mt-2 w-10">  <span className=' bg-pink-900  flex text-sm mt-1 px-2  py-1 rounded-lg text-white'>1<MdOutlineStar size={20} className=" "  /> </span>
-           <p className=''>{Profile.location}</p>
+           <div className="mt-2 w-12 ml-4">  <span className=' bg-pink-900  flex text-sm mt-1 px-2  py-1  rounded-lg text-white'>3.1<MdOutlineStar size={20} className=" "  /> </span>
+         
            </div>
+           
     </div>
     </div>
 
