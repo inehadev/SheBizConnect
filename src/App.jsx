@@ -9,6 +9,7 @@ import CategoryModal from './Component/CategoryModal'
 import ProfileCard from './Pages/ProfilePage/ProfileCard'
 import Profile from './Component/Card/Profile'
 import VisitProfile from './Pages/ProfilePage/VisitProfile'
+import BreadScrumb from './Component/BreadScrumb/BreadScrumb'
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
 
     <Routes>
-     
+    
     <Route path='/' element ={<HeroPage/>} />
     <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
@@ -28,7 +29,7 @@ function App() {
       <Route path='/addcategory' element ={<CategoryModal/>} />
       <Route path='/profile' element ={<ProfileCard/>} />
       <Route path='/createprofile' element={<Profile/>}/>
-      <Route path='/profile/visitprofile' element={<VisitProfile/>} />
+      <Route path='/visitprofile' element={<VisitProfile/>} />
 
 
     </Routes>

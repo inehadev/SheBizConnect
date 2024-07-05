@@ -16,7 +16,7 @@ const [showModal , setMoadal]=useState(false);
   return (
     <>
       <Header />
-      <BreadScrumb/>
+      
 
       <div>
         <div className="flex justify-between">

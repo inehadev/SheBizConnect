@@ -33,7 +33,7 @@ if(loading){
     )
 }
     const handleCategoryClick = (categoryType) => {
-        console.log("all fine")
+        
         navigate(`/profile?category=${categoryType}`);
     };
 

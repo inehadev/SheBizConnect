@@ -62,7 +62,12 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
     //   };
     
      
-    
+    const images = [
+        "/cake.jpg",
+        "/paneer.jpg",
+        "nan.jpg",
+        "burger.jpg"
+    ];
     
 
 
@@ -71,29 +76,31 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
         
         <Header />
-        <BreadScrumb/>
+        <div className="flex  justify-between">
+            <div></div>
+            <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Update Profile</button></div>
+        </div>
+        
         
         {/* <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " /> */}
         <div className=" justify-around mt-[2%]    items-center ">
        
          
 
-             <div className="grid grid-cols-col gap-1  h-[400px]  mt-[8%] justify-center it">
-              <div className=" "><img className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 traslate-all duration-100" src="/cake.jpg" alt="" /></div>
-              <div className="grid grid-rows-row gap-2">
-              <div className="">
-                 <img   className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100 w-full h-full" src="/paneer.jpg" alt="" />
-              </div>
-              <div>
-                   <img  className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100" src="nan.jpg" alt="" />
-              </div>
-              </div>
-              <div className="">
-                <img  className="object-cover border border-pink-900 rounded-md w-full h-full hover:scale-90 traslate-all duration-100 " src="burger.jpg" alt="" />
-              </div>
-             </div>
-
-
+        <div className="grid grid-cols-col gap-1  h-[400px]  mt-[8%] justify-center it">
+<div className=" "><img className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 traslate-all duration-100" src="/cake.jpg" alt="" /></div>
+<div className="grid grid-rows-row gap-2">
+<div className="">
+   <img   className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100 w-full h-full" src="/paneer.jpg" alt="" />
+</div>
+<div>
+     <img  className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100" src="nan.jpg" alt="" />
+</div>
+</div>
+<div className="">
+  <img  className="object-cover border border-pink-900 rounded-md w-full h-full hover:scale-90 traslate-all duration-100 " src="burger.jpg" alt="" />
+</div>
+</div> 
              <div className=' justify-center '>
         
                 
@@ -125,4 +132,6 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         </>
     )
 }
+
+
 
