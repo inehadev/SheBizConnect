@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import axios from "axios";
+import Item from '../../Component/item/Item'
 import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
    export default function  VisitProfile  ()  {
@@ -44,22 +45,6 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         )
     }
  
-       
-    // const getStarRatingRepresentation = (rating) => {
-    //     if (rating === 1) {
-    //       return '1⭐';
-    //     } else if (rating === 2) {
-    //       return '⭐⭐';
-    //     } else if (rating === 3) {
-    //       return '⭐⭐⭐'; // Special condition for 3 stars
-    //     } else if (rating === 4) {
-    //       return '⭐⭐⭐⭐';
-    //     } else if (rating === 5) {
-    //       return '⭐⭐⭐⭐⭐';
-    //     } else {
-    //       return 'Rating not available';
-    //     }
-    //   };
     
      
      const updateProfile = async()=>{
@@ -73,6 +58,12 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         }
      }
     
+       const images = [
+        "/snacks1.jpg",
+        "/snacks2.jpg",
+        "/nan.jpg",
+        "/snacks3.jpg"
+    ];
 
 
     return (
@@ -92,21 +83,60 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
          
 
         <div className="grid grid-cols-col gap-1 h-[400px]   mt-[8%] justify-center it">
-<div className=" "><img className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 traslate-all duration-100" src="/cake.jpg" alt="" /></div>
+        {images.map((src, index) => (
+                        index === 0 && (
+                            <div key={index}>
+                                <img
+                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+                        )
+                    ))}
 
 <div className=" grid grid-rows-row gap-1">
-    <div>
-   <img   className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100 w-full h-full" src="/paneer.jpg" alt="" />
-</div>
-<div>
-     <img  className="object-cover border border-pink-900 rounded-md hover:scale-90 traslate-all duration-100" src="nan.jpg" alt="" />
-</div>
+{images.map((src, index) => (
+                        index === 1 && (
+                            <div key={index}>
+                                <img
+                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+                        )
+                    ))}
+ {images.map((src, index) => (
+                        index === 2 && (
+                            <div key={index}>
+                                <img
+                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+                        )
+                    ))}
 </div>
 
-<div className="">
-  <img  className="object-cover border border-pink-900 rounded-md w-full h-full hover:scale-90 traslate-all duration-100 " src="burger.jpg" alt="" />
-</div>
+
+
+
+{images.map((src, index) => (
+                        index === 3 && (
+                            <div key={index}>
+                                <img
+                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+                        )
+                    ))}
+
 </div> 
+
              <div className=' justify-center '>
         
                 
@@ -133,6 +163,10 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
 
           </div>
+
+          
+          <Item/>
+
            
         
         </>
@@ -141,3 +175,19 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
 
 
+       
+    // const getStarRatingRepresentation = (rating) => {
+    //     if (rating === 1) {
+    //       return '1⭐';
+    //     } else if (rating === 2) {
+    //       return '⭐⭐';
+    //     } else if (rating === 3) {
+    //       return '⭐⭐⭐'; // Special condition for 3 stars
+    //     } else if (rating === 4) {
+    //       return '⭐⭐⭐⭐';
+    //     } else if (rating === 5) {
+    //       return '⭐⭐⭐⭐⭐';
+    //     } else {
+    //       return 'Rating not available';
+    //     }
+    //   };
