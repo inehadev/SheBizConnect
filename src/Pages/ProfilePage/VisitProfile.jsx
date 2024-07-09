@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { MapPin } from 'lucide-react';
 import { Loader } from 'lucide-react';
 import Header from '../../Component/Header'
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import axios from "axios";
@@ -52,6 +52,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
             
          const bodyparameter ={
             
+            
          }            
         } catch (error) {
             
@@ -73,12 +74,13 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         <Header />
         <div className="flex  justify-between">
             <div></div>
-            <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Update Profile</button></div>
+            <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>
+                <Link to={'/updateprofile'}>Update Profile</Link></button></div>
         </div>
         
         
         {/* <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " /> */}
-        <div className=" justify-around mt-[2%]    items-center ">
+        <div className=" justify-around mt-[2%]   items-center ">
        
          
 
