@@ -6,6 +6,7 @@ import { IoMdAdd } from "react-icons/io";
 import CategoryModal from "./CategoryModal";
 import { Link } from "react-router-dom";
 import BreadScrumb from "./BreadScrumb/BreadScrumb";
+import Marquee from "react-fast-marquee";
 
 
 
@@ -23,12 +24,6 @@ const [showModal , setMoadal]=useState(false);
           <div className="text-3xl text-pink-900 mt-24 ml-10">Categories</div>
           <div className="text-2xl text-pink-900 mt-24 mr-20"> Add Categories <button  className="mt-1" onClick={()=>setMoadal(true)}> <IoMdAdd className="ml-1 mt-2 " /></button>
         
-         {showModal && (
-            <CategoryModal onClose={()=>setMoadal(false)} />
-          )}
-
-     
-
           </div>
         </div>
 
@@ -42,11 +37,26 @@ const [showModal , setMoadal]=useState(false);
           <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-28 h-8" >Marketing</button>
         </div>
 
-        <Card />
-
-
-
+        {!showModal && (
+          <div>
+            <Card />
+          </div>
+        )}
       </div>
+
+
+     
+
+      
+      
+        {showModal && (
+          <>
+            <CategoryModal onClose={()=>setMoadal(false)} />
+            
+          </>
+            
+          )}
+          
 
     </>
   )

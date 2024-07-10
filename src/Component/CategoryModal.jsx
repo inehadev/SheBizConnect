@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react'
+import React, { useState ,useRef,useEffect } from 'react'
 import { X } from 'lucide-react'
 import axios from 'axios'
 
@@ -6,6 +6,8 @@ import axios from 'axios'
 function CategoryModal({ onClose }) {
   const [file, setfile] = useState('');
   const [type, settype] = useState('');
+  const modalRef=useRef();
+
   
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -60,7 +62,7 @@ function CategoryModal({ onClose }) {
         CategoryType: type,
         image: file,
       }
-      console.log(bodyparameter.CategoryType); // Correctly accessing categoryType
+      console.log(bodyparameter.CategoryType); 
       console.log(bodyparameter.image);
       const axiosheader = {
         headers: {
@@ -80,24 +82,34 @@ function CategoryModal({ onClose }) {
     }
 
   }
+
+  const closeModal =(e)=>{
+    if(modalRef.current && modalRef.current===e.target.value){
+      onClose();
+    }
+  }
   
   return (
 <>
 
-    <div className=' mt-[5%] min-h-screen'>
+<div
+        ref={modalRef}
+        onClick={closeModal}
+        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80"
+      >
      
-      <div className='flex justify-center gap-32 '>
+      
      
-       
-        <button onClick={onClose} className=' ml-[10%] mt-[40px]'><X className='text-pink-900 ml-[320px]' size={30} /></button>
-      </div>
-      <div  className='flex gap-2'>
+     <div className=''> 
+        <button onClick={onClose} className=' ml-[90%] '><X className='text-pink-200 ' size={30} /></button>
+      
+      <div  className='flex gap-2 '>
       { file &&(
-          <div className='mt-5 mr-60'>
-            <img  src={file} alt='img' className='  h-[190px] mr-[50%] '/>
+          <div className='mt-5 mr-60 h-[190px] w-[240px] bg-pink-200'>
+            <img  src={file} alt='img' className='h-[190px] w-[240px]  mr-[50%] '/>
           </div>
         )}
-      <div className=" flex flex-col h-[250px]   w-[400px]  mt-4 border  border-pink-900 rounded-lg  ">
+      <div className=" flex flex-col h-[250px] bg-pink-200  w-[400px]  mt-4 border  border-pink-900 rounded-lg  ">
          
         <input className='border border-pink-900 ml-9 w-[300px]  bg-transparent placeholder: text-lg , placeholder: 
      text-pink-900 mt-10 rounded-sm  px-4 focus: outline-none' placeholder='Category' type='text' onChange={(e) => {
@@ -109,7 +121,8 @@ function CategoryModal({ onClose }) {
         <button className='mt-[13%] ml-[57%] border border-pink-900   hover:text-pink-800 h-9 bg-pink-900 text-white hover:bg-transparent w-24 rounded-lg' onClick={handleChange}>save</button>
       </div>
       </div>
-    </div>
+      </div> 
+      </div>
    
     
     </>
