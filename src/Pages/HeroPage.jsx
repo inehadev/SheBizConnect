@@ -16,10 +16,10 @@ export default function HeroPage() {
         <>
             <Header />
       
-        <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain    flex justify-center items-center  font-poppins "  >
+        <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain     flex justify-center items-center  font-poppins "  >
             <div className="" >
                 <div className="text-6xl font-medium text-pink-900  ">
-                   <span className=" shadow-sm">Unlock Women's Potential,</span> 
+                   <span className=" hover:px-1 scale-110 transition-all">Unlock Women's Potential,</span> 
                 </div>
                 <div className="text-3xl ml-14 mt-4 font-medium text-pink-900 flex gap-2 ">
                       Elevate  Your Life with <span className="text-pink-900 shadow-sm">SheBizConnect</span>
@@ -53,3 +53,7 @@ export default function HeroPage() {
         </>
     )
 }
+
+
+
+{/* <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain     flex justify-center items-center  font-poppins "  > */}

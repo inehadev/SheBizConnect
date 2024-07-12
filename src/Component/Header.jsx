@@ -49,7 +49,7 @@ export default function Header() {
         <>
             <div className="h-12 flex justify-between  mt-2 font-poppins" >
                 <div className="mt-8">
-                    <h2 className="ml-14 text-3xl font-family-aerial text-pink-900 font-medium " ><Link to='/'>SheBizConnect</Link></h2>
+                    <h2 className="ml-14 text-2xl font-family-aerial text-pink-900 font-medium " ><Link to='/'>SheBizConnect</Link></h2>
                 </div>
 
                 <div className="flex gap-5 " >
@@ -64,16 +64,16 @@ export default function Header() {
                         <Link className="mr-14 text-pink-900 text-xl" to='/login' onClick={Logout}>
                         <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Logout</button>
                         </Link>
-                        <span className="mr-14 text-xl text-pink-900">Hii {username}!👋</span>
+                        <span className="mr-14 text-lg bg-pink-100 px-3 py-2 rounded-md text-pink-900">Hii {username}!👋</span>
 
                     </div>
                 ) : (
                     <div className="mt-5" >
-                       <Link className="mr-14 text-xl " to='/register' >
+                       <Link className="mr-14 text-lg " to='/register' >
                         <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Register</button>
                         </Link>
-                        <Link className="mr-14 text-xl " to='/login' >
-                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Login</button>
+                        <Link className="mr-14 text-lg " to='/login' >
+                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2  hover:py-1 hover:rounded-lg hover:text-white">Login</button>
                         </Link>
                     </div>
                 )
