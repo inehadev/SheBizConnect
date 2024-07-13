@@ -5,6 +5,8 @@ import axios from "axios";
 
 
 const AddItem =({onclose})=>{
+  const url = new URL(window.location.href);
+  const profile= url.searchParams.get('profile')
   const [file , setfile]=useState('');
   const [name , setname]=useState();
   const [price , setprice]=useState();
@@ -37,7 +39,7 @@ const AddItem =({onclose})=>{
    
 
    }
-
+     const token = localStorage.getItem('x-auth-token');
     const handleAddItem = async()=>{
       try {
         const bodyparameter = {
@@ -50,11 +52,16 @@ const AddItem =({onclose})=>{
         const axiosheader = {
           headers:{
               "Accept":"application/json",
+              'x-auth-token':token,
           }
       }
 
-      const response = await axios.post('http://localhost:4000/createItem/:profileId' , bodyparameter , axiosheader);
+      const response = await axios.post(`http://localhost:4000/createItem/${profile} `, bodyparameter , axiosheader);
       console.log(response);
+      if(response){
+        alert('Your Item is Successfully added');
+        onclose();
+      }
         
       } catch (error) {
         console.log("handle addItem error" , error);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { MapPin } from 'lucide-react';
 import { Loader } from 'lucide-react';
 import Header from '../../Component/Header'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import axios from "axios";
@@ -11,10 +11,10 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
    export default function  VisitProfile  ()  {
    
-
+    const navigate = useNavigate();
     const url = new URL(window.location.href);
     const profile= url.searchParams.get('profile')
-    console.log(profile)
+    
     const [Profile  , setProfile]=useState();
     const [loading , setloading]=useState(true);
     useEffect (()=>{
@@ -47,16 +47,9 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
  
     
      
-     const updateProfile = async()=>{
-        try {
-            
-         const bodyparameter ={
-            
-            
-         }            
-        } catch (error) {
-            
-        }
+     const handleupdate= ()=>{
+        navigate(`/updateprofile?profile=${profile}`);
+
      }
     
        const images = [
@@ -74,8 +67,8 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         <Header />
         <div className="flex  justify-between">
             <div></div>
-            <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>
-                <Link to={'/updateprofile'}>Update Profile</Link></button></div>
+            <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium' onClick={handleupdate}>
+                Update Profile</button></div>
         </div>
         
         

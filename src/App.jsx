@@ -31,7 +31,7 @@ function App() {
       <Route path='/profile' element ={<ProfileCard/>} />
       <Route path='/createprofile' element={<Profile/>}/>
       <Route path='/visitprofile' element={<VisitProfile/>} />
-      <Route path='/updateProfile' element={<UpdateProfile/>}/>
+      <Route path='/updateprofile' element={<UpdateProfile/>}/>
 
 
     </Routes>
