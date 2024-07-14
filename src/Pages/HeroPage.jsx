@@ -2,10 +2,12 @@ import { Button, Flex, Heading, Text, Icon } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { FaArrowRight } from "react-icons/fa";
 import Header from "../Component/Header";
-import Categories from "../Component/Categories";
+import { ArrowRight } from 'lucide-react';
 import Card from "../Component/Card/Card";
-import Marquee from "react-fast-marquee";
+
 import { Link, useNavigate } from 'react-router-dom'
+import { FaBriefcase, FaLightbulb, FaHandsHelping, FaNetworkWired, FaUsers } from 'react-icons/fa';
+
 import React from "react";
 
 export default function HeroPage() {
@@ -16,22 +18,28 @@ export default function HeroPage() {
         <>
             <Header />
       
-        <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain     flex justify-center items-center  font-poppins "  >
+        <div className=" bg-rose-50  mr-10 ml-10 rounded-md mt-20  bg-center h-[450px] bg-contain     flex  justify-around items-center  font-poppins "  >
             <div className="" >
-                <div className="text-6xl font-medium text-pink-900  ">
-                   <span className=" hover:px-1 scale-110 transition-all">Unlock Women's Potential,</span> 
+                <div className="text-6xl font-medium text-pink-900 ml-20  ">
+                   <span className=" hover:px-1 scale-110 transition-all">Empowering Women,<span className="text-pink-900 text-5xl" > Connecting Services:</span></span> 
                 </div>
-                <div className="text-3xl ml-14 mt-4 font-medium text-pink-900 flex gap-2 ">
-                      Elevate  Your Life with <span className="text-pink-900 shadow-sm">SheBizConnect</span>
+                <div className="text-xl ml-20 mt-4 font-medium text-pink-900 flex gap-2 ">
+                Discover, Connect, and Thrive with  <span className="text-pink-900 shadow-sm">SheBizConnect</span>
                 
                  </div>
+                 <div className="ml-20  mt-6 flex  "><Link to={'/categories'}><button className="bg-pink-900 text-white flex gap-1 py-1 text-md px-2 hover:bg-transparent hover:text-pink-900 hover:border border-pink-900 rounded-sm h-8">Explore <ArrowRight className="mt-0 size-6" /></button></Link></div>
+                 </div>
+                 <div className="h-[750px] w-[900px] mr-20 "><img  src="/wemen.png" alt="" />
+                 
+                 </div>
+                 
                 
-            </div>
+           
      
         </div >
 
-        <div class="text-center mt-2 ">
-  <span class="text-4xl text-pink-900">Premium Services</span>
+        <div class="text-center mt-7 ">
+  <span class="text-4xl text-pink-900 ">Premium Services</span>
 </div>
         <hr className=" border-pink-900 mt-12 opacity-60  drop-shadow-md  mx-16" />
         <Link to={'/categories'}>
@@ -49,11 +57,22 @@ export default function HeroPage() {
        
       <Link to={'/categories'}> <Card/></Link>
 
+
+      <div className=" ">
+        <span className="text-5xl justify-center mt-9 text-pink-900 flex ">About us</span>
+
+       <div className="h-[600px] w-[900px]  flex ml-[20%] ">
+       <img className="object-cover   " src="/Frame 2.png" alt="" />
+       </div>
+
         
+      </div>
+
+
+      
         </>
     )
 }
 
 
 
-{/* <div className="bg-[url('/girlb.png')] bg-no-repeat mt-8   bg-center h-[570px] bg-contain     flex justify-center items-center  font-poppins "  > */}

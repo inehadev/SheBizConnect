@@ -41,25 +41,27 @@ if(loading){
    
     return (
     <>
-        <Marquee play speed={200} pauseOnHover={true}>
+       <div className="ml-10 mr-10 ">
+       <Marquee play speed={100} pauseOnHover={true}>
              
-        <div className="mt-10 flex  flex-wrap justify-center gap-14">
-          
-         { categories.map((item)=>(
-              <div className="flex  ">
- 
-              <div key={item._id} className=  " border  border-pink-900  rounded-md mt-10 h-[210px]    mb-7 " >
-              <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
-                 <img className=" h-[160px] w-full rounded-md"src={item.image}alt="img"/>
+             <div className="mt-10 flex  flex-wrap justify-center gap-14">
                
-              <p className="text-xl mt-2 text-pink-900  font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
-              </div>
-            </div>
+              { categories.map((item)=>(
+                   <div className="flex  ">
+      
+                   <div key={item._id} className=  " border  border-pink-900  rounded-md mt-10 h-[210px]    mb-7 " >
+                   <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
+                      <img className=" h-[160px] w-full rounded-md"src={item.image}alt="img"/>
+                    
+                   <p className="text-xl mt-2 text-pink-900  font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
+                   </div>
+                 </div>
+                  </div>
+          ))}
              </div>
-     ))}
-        </div>
-       
-        </Marquee>
+            
+             </Marquee>
+       </div>
 
         
         </>
