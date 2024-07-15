@@ -27,7 +27,7 @@ export default function HeroPage() {
                 Discover, Connect, and Thrive with  <span className="text-pink-900 shadow-sm">SheBizConnect</span>
                 
                  </div>
-                 <div className="ml-20  mt-6 flex  "><Link to={'/categories'}><button className="bg-pink-900 text-white flex gap-1 py-1 text-md px-2 hover:bg-transparent hover:text-pink-900 hover:border border-pink-900 rounded-sm h-8">Explore <ArrowRight className="mt-0 size-6" /></button></Link></div>
+                 <div className="ml-20  mt-6 flex  "><Link to={'/categories'}><button className="bg-pink-900 text-white flex gap-1 py-1 text-md px-3 hover:bg-transparent hover:text-pink-900 hover:border border-pink-900 rounded-md h-8">Explore <ArrowRight className="mt-0 size-6" /></button></Link></div>
                  </div>
                  <div className="h-[750px] w-[900px] mr-20 "><img  src="/wemen.png" alt="" />
                  
@@ -41,7 +41,7 @@ export default function HeroPage() {
         <div class="text-center mt-7 ">
   <span class="text-4xl text-pink-900 ">Premium Services</span>
 </div>
-        <hr className=" border-pink-900 mt-12 opacity-60  drop-shadow-md  mx-16" />
+        <hr className=" border-pink-900 mt-10   opacity-60  drop-shadow-md  mx-16" />
         <Link to={'/categories'}>
         <div className=" flex gap-10 ml-[20%]">
           <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-9 w-20 h-8">All</button>
@@ -59,10 +59,15 @@ export default function HeroPage() {
 
 
       <div className=" ">
-        <span className="text-5xl justify-center mt-9 text-pink-900 flex ">About us</span>
+        <span className="text-4xl justify-center mt-9 text-pink-900 flex ">Inspiring Women's Excellence</span>
+        <span className="text-sm justify-center mt-4 font-poppins text-pink-900 flex ml-5 ">Celebrating the strength of women uplifting each other,  fostering  collaboration, 
+          support, </span>
+          <span className="text-sm justify-center mt-1 font-poppins text-pink-900 flex ml-5 "> and shared experiences for collective growth and success. </span>
 
-       <div className="h-[600px] w-[900px]  flex ml-[20%] ">
-       <img className="object-cover   " src="/Frame 2.png" alt="" />
+        
+
+        <div className="h-[600px] w-[900px] bg-[url('/path/to/Desktop.png')] bg-cover bg-center flex ml-[20%]">
+       <img className="object-cover hover:scale-110 transition-transform duration-200 " src="/Frame 2.png" alt="" />
        </div>
 
         
