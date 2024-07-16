@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
 import { Loader } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link,  useNavigate } from 'react-router-dom'
 import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
+import UpdateCategory from "../../Component/UpdateCategory";
 import axios from 'axios';
 
 
@@ -16,6 +17,7 @@ console.log(category);
 
     const [profile , setprofile]=useState([]);
     const [loading , setloading]=useState(true);
+    const[showmodal , setshowmodal]=useState(false);
 
     useEffect(()=>{
          
@@ -67,10 +69,10 @@ console.log(category);
         <>
 
             <Header />
-            <div className='flex justify-between'>
-             <div></div>
-             <div  className='mt-14 ml-28 text-lg  font-poppins  mr-36'><Link to={'/createprofile'}><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Create Profile</button></Link></div>
-
+            <div className='flex justify-end gap-9'>
+                <div  className='mt-14  text-lg font-poppins  '><button className=' hover:text-white border border-pink-900 hover:bg-pink-900 px-1  text-pink-900 bg-transparent rounded-md font-medium' onClick={()=>setshowmodal(true)}>Update Category</button></div>
+             <div  className='mt-14  text-lg  font-poppins  mr-36'><Link to={'/createprofile'}><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Create Profile</button></Link></div>
+            
             </div>
 
             
@@ -96,6 +98,13 @@ console.log(category);
             </div>
             ) )}
             </div>
+
+          
+            {showmodal && (
+            <>
+            <UpdateCategory onClose={()=>setshowmodal(false)}/>
+            </>
+          )}
         </>
     )
 }
