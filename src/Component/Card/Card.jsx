@@ -49,11 +49,11 @@ if(loading){
               { categories.map((item)=>(
                    <div className="flex  ">
       
-                   <div key={item._id} className=  " border  border-pink-900  rounded-md mt-10 h-[210px]    mb-7 " >
+                   <div key={item._id} className=  " border  border-gray-400  rounded-md mt-10 h-[210px]    mb-7 " >
                    <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
                       <img className=" h-[160px] w-[200px] rounded-md"src={item.image}alt="img"/>
                     
-                   <p className="text-xl mt-2 text-pink-900  font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
+                   <p className="text-xl mt-2 text-gray-700  opacity-70 font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
                    </div>
                  </div>
                   </div>

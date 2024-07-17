@@ -81,17 +81,17 @@ console.log(category);
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {profile.map((item)=>(
 
-          <div   className='bg-rose-50 ml-9  h-[300px]  '>
+          <div   className='bg-rose-50 ml-9  border border-gray-500 border-opacity-10 rounded-md h-[300px]  '>
                 <div key={item._id}   className=' w-[300px] h-[170px]  rounded-sm'>
                     <img  onClick={() => handleprofileclick(item._id)}   className='rounded-md w-full h-full object-cover hover:scale-90 transition-all duration-200
                     ' src={item.img} alt="" />
                 </div>
-                <div className='ml-5 mt-2 '  >
-                    <h3 className='text-xl font-medium  text-pink-900 '>{item.title}</h3>
-                    {/* <span className='  px-1 rounded-lg'>{item.rating.number}</span> */}
-                    {/* <span className='font-normal ml-2'>{item.type}</span> */}
-                    <p className='mt-1'> {item.typeofp}</p>
-                    <p className='mt-1 mb-3'>{item.location}</p>
+                <div className='justify-center mt-2 '  >
+                    <h3 className='text-xl  text-center  font-poppins font-medium  text-pink-900 '>{item.title}</h3>
+                     {/* <span className='  px-1 rounded-lg'>{item.rating}</span>
+                     <span className='font-normal ml-2'>{item.type}</span> */}
+                    <p className='mt-1 text-gray-700 font-mediumfont-poppins text-center'> {item.typeofp}</p>
+                    <p className='mt-1 mb-3 text-gray-700 font-medium  font-poppins text-center'>{item.location}</p>
 
                 </div>
 

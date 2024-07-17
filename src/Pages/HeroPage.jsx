@@ -18,12 +18,12 @@ export default function HeroPage() {
         <>
             <Header />
       
-        <div className=" bg-rose-50  mr-10 ml-10 rounded-md mt-20  bg-center h-[450px] bg-contain     flex  justify-around items-center  font-poppins "  >
+        <div className=" bg-rose-50  bg-opacity-40 mr-10 ml-10 rounded-md mt-20  bg-center h-[450px] bg-contain     flex  justify-around items-center  font-poppins "  >
             <div className="" >
                 <div className="text-6xl font-medium text-pink-900 ml-20  ">
                    <span className=" hover:px-1 scale-110 transition-all">Empowering Women,<span className="text-pink-900 text-5xl" > Connecting Services:</span></span> 
                 </div>
-                <div className="text-xl ml-20 mt-4 font-medium text-pink-900 flex gap-2 ">
+                <div className="text-xl ml-20 mt-4 font-medium text-gray-500 flex gap-2 ">
                 Discover, Connect, and Thrive with  <span className="text-pink-900 shadow-sm">SheBizConnect</span>
                 
                  </div>
@@ -60,9 +60,9 @@ export default function HeroPage() {
 
       <div className=" ">
         <span className="text-4xl justify-center mt-9 text-pink-900 flex ">Inspiring Women's Excellence</span>
-        <span className="text-sm justify-center mt-4 font-poppins text-pink-900 flex ml-5 ">Celebrating the strength of women uplifting each other,  fostering  collaboration, 
+        <span className="text-sm justify-center mt-4 font-poppins text-gray-400 flex ml-5 ">Celebrating the strength of women uplifting each other,  fostering  collaboration, 
           support, </span>
-          <span className="text-sm justify-center mt-1 font-poppins text-pink-900 flex ml-5 "> and shared experiences for collective growth and success. </span>
+          <span className="text-sm justify-center mt-1 font-poppins text-gray-400 flex ml-5 "> and shared experiences for collective growth and success. </span>
 
         
 
