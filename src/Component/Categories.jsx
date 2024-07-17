@@ -6,8 +6,7 @@ import { IoMdAdd } from "react-icons/io";
 import CategoryModal from "./CategoryModal";
 import { Link } from "react-router-dom";
 import BreadScrumb from "./BreadScrumb/BreadScrumb";
-import Marquee from "react-fast-marquee";
-import UpdateCategory from "./UpdateCategory";
+
 
 
 
@@ -16,14 +15,12 @@ export default function Categories() {
 const [showModal , setMoadal]=useState(false);
 
 
-const [showUpdateModal , setUpdateModal]=useState(false);
 
  
   return (
     <>
       <Header />
       
-
       <div>
         <div className="flex justify-between">
           <div className="text-3xl text-pink-900 mt-24 ml-10">Categories</div>
@@ -46,7 +43,7 @@ const [showUpdateModal , setUpdateModal]=useState(false);
        
         </div>
 
-        {!showModal || !showUpdateModal && (
+        {!showModal  && (
           <div>
             <Card />
           </div>
@@ -66,11 +63,6 @@ const [showUpdateModal , setUpdateModal]=useState(false);
             
           )}
 
-          {showUpdateModal && (
-            <>
-            <UpdateCategory onClose={()=>setUpdateModal(false)}/>
-            </>
-          )}
           
 
     </>

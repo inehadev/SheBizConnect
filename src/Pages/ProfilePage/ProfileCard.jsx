@@ -69,6 +69,7 @@ console.log(category);
         <>
 
             <Header />
+          
             <div className='flex justify-end gap-9'>
                 <div  className='mt-14  text-lg font-poppins  '><button className=' hover:text-white border border-pink-900 hover:bg-pink-900 px-1  text-pink-900 bg-transparent rounded-md font-medium' onClick={()=>setshowmodal(true)}>Update Category</button></div>
              <div  className='mt-14  text-lg  font-poppins  mr-36'><Link to={'/createprofile'}><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Create Profile</button></Link></div>

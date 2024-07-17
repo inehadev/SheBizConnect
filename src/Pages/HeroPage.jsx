@@ -4,8 +4,8 @@ import { FaArrowRight } from "react-icons/fa";
 import Header from "../Component/Header";
 import { ArrowRight } from 'lucide-react';
 import Card from "../Component/Card/Card";
-
 import { Link, useNavigate } from 'react-router-dom'
+import Footer from "../Component/Footer";
 import { FaBriefcase, FaLightbulb, FaHandsHelping, FaNetworkWired, FaUsers } from 'react-icons/fa';
 
 import React from "react";
@@ -72,6 +72,8 @@ export default function HeroPage() {
 
         
       </div>
+
+      <Footer/>
 
 
       

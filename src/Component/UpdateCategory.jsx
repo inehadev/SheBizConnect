@@ -2,7 +2,7 @@ import React, { useState ,useRef,useEffect } from 'react'
 import { X } from 'lucide-react'
 import axios from 'axios';
 
-const UpdateCategory =()=>{
+const UpdateCategory =({onclose})=>{
   console.log("fine")
     const [type , settype]=useState('');
     const [file , setfile]=useState('');
@@ -67,7 +67,7 @@ const UpdateCategory =()=>{
      
       
     <div className=''> 
-          <button  className=' flex ml-[90%] '><X className='text-pink-900 ' size={30} /></button>
+          <button  className=' flex ml-[90%] ' onClick={onclose}><X className='text-pink-900 ' size={30} /></button>
         
         
         <div className=" flex flex-col h-[250px] bg-rose-50 w-[400px]  mt-4 border  border-pink-900 rounded-lg  ">

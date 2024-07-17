@@ -65,6 +65,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
         
         <Header />
+       
         <div className="flex  justify-between">
             <div></div>
             <div className="mt-14 ml-28 text-lg  font-poppins  mr-36 "><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium' onClick={handleupdate}>

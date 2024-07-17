@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import BreadScrumb from '../BreadScrumb/BreadScrumb';
 
 function Profile() {
 
@@ -104,7 +105,7 @@ function Profile() {
         <div className="text-4xl  text-pink-900 ml-[40%] mt-10 font-poppins">
           <Link to="/">SheBizConnect</Link>
         </div>
-  
+      
         <div className='border border-pink-900 w-[400px] h-[390px] justify-center ml-[35%] mt-14 rounded-md'>
         <div className="text-2xl text-pink-900 ml-[30%] mt-3 font-poppins">Create Profile</div>
           <div className='ml-8 mt-6 border border-pink-900 mr-14'> <input className='justify-center w-full h-7 px-5 focus:outline-none bg-transparent  placeholder:text-pink-900 placeholder:text-sm ' type="text" placeholder='Enter your title '

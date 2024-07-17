@@ -53,7 +53,7 @@ export default function Header() {
                 </div>
 
                 <div className="flex gap-5 " >
-                    <div className="h-10 w-[600px] border border-pink-900 shadow-md focus-within:scale-110 mt-8 rounded-md flex justify-between items-center px-8" >
+                    <div className="h-10 w-[600px] border-[0.5px] border-pink-900 [0.5px] shadow-md focus-within:scale-110 mt-8 rounded-md flex justify-between items-center px-8" >
                         <input type="text" className="outline-none border-none bg-transparent placeholder:text-pink-900 " placeholder="Search the categories" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                         <IoSearch className="h-6  w-8 text-pink-900 " />
                     </div>
