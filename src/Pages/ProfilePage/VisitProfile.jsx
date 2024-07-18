@@ -16,28 +16,46 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
     const profile= url.searchParams.get('profile')
     
     const [Profile  , setProfile]=useState();
+    const [addGallery, setAddGallery] = useState([]);
     const [loading , setloading]=useState(true);
     useEffect (()=>{
 
-        const handleProfile = async()=>{
+        // const handleProfile = async()=>{
            
-            try{
-                const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
-                console.log(response.data)
-                if(response){
-                    setProfile(response.data);
-                }
-            }
-            catch(error){
+        //     try{
+        //         const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
+               
+        //         if(response){
+        //             setProfile(response.data);
+        //         }
+        //     }
+        //     catch(error){
+        //         console.log("error in get profile"  , error )
+        //     }finally{
+        //         setloading(false);
+        //     }
+
+        // }
+
+        const handleItem =async()=>{
+            try {
+            const response = await axios.get(`http://localhost:4000/visit/${profile}`);
+            if (response && response.data) {
+                setAddGallery(response.data.AddGallery);
+                console.log(response.data.AddGallery);
+            }  
+            }  catch(error){
                 console.log("error in get profile"  , error )
             }finally{
                 setloading(false);
             }
-
         }
-        handleProfile();
 
-    } , [profile])
+
+        
+        handleItem();
+
+    } , [])
 
     if(loading){
         return (
@@ -51,14 +69,6 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         navigate(`/updateprofile?profile=${profile}`);
 
      }
-    
-       const images = [
-        "/snacks1.jpg",
-        "/snacks2.jpg",
-        "/nan.jpg",
-        "/snacks3.jpg"
-    ];
-
 
     return (
         <>
@@ -76,10 +86,10 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         {/* <hr className="w-full border-pink-900 opacity-40   mt-16 drop-shadow-md  " /> */}
         <div className=" justify-around mt-[2%]   items-center ">
        
-         
+        {addGallery.length > 0 && (
 
-        <div className="grid grid-cols-col gap-1 h-[400px]   mt-[8%] justify-center it">
-        {images.map((src, index) => (
+        <div  key={addGallery._id} className="grid  grid-cols-col gap-1 h-[400px]   mt-[8%] justify-center it">
+        {addGallery.map((src, index) => (
                         index === 0 && (
                             <div key={index}>
                                 <img
@@ -92,7 +102,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
                     ))}
 
 <div className=" grid grid-rows-row gap-1">
-{images.map((src, index) => (
+{addGallery.map((src, index) => (
                         index === 1 && (
                             <div key={index}>
                                 <img
@@ -103,7 +113,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
                             </div>
                         )
                     ))}
- {images.map((src, index) => (
+ {addGallery.map((src, index) => (
                         index === 2 && (
                             <div key={index}>
                                 <img
@@ -119,7 +129,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
 
 
-{images.map((src, index) => (
+{addGallery.map((src, index) => (
                         index === 3 && (
                             <div key={index}>
                                 <img
@@ -132,8 +142,8 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
                     ))}
 
 </div> 
-
-             <div className=' justify-center '>
+        )}
+             {/* {/* <div className=' justify-center '>
         
                 
         <div className='ml-5 mt-2 flex  justify-start  m-36'  >
@@ -159,7 +169,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
 
           </div>
-
+ 
           
           <Item/>
 
@@ -169,21 +179,3 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
     )
 }
 
-
-
-       
-    // const getStarRatingRepresentation = (rating) => {
-    //     if (rating === 1) {
-    //       return '1⭐';
-    //     } else if (rating === 2) {
-    //       return '⭐⭐';
-    //     } else if (rating === 3) {
-    //       return '⭐⭐⭐'; // Special condition for 3 stars
-    //     } else if (rating === 4) {
-    //       return '⭐⭐⭐⭐';
-    //     } else if (rating === 5) {
-    //       return '⭐⭐⭐⭐⭐';
-    //     } else {
-    //       return 'Rating not available';
-    //     }
-    //   };

@@ -32,13 +32,13 @@ const [showModal , setMoadal]=useState(false);
 
         <hr className="w-full border-pink-900 opacity-60  drop-shadow-md mt-3 ml-9" />
         <div className="flex justify-start gap-28">
-        <button className="rounded-md hover:bg-transparent hover:text-pink-900 border bg-pink-900  font-poppins text-white shadow-md  mt-5 ml-10 w-36 h-8" onClick={()=>setUpdateModal(true)}>Update Category</button>
+   
         <div className=" flex gap-10 ml-10">
-          <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-20 h-8">All</button>
-          <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-24 h-8" >Cooking</button>
-          <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-24 h-8" >Art</button>
-          <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-24 h-8" >Style</button>
-          <button className="rounded-full hover:bg-pink-800 hover:text-white border border-pink-900 shadow-md  mt-5 w-28 h-8" >Marketing</button>
+          <button className="rounded-full hover:bg-pink-800 hover:text-white border text-gray-600 font-medium border-pink-900 shadow-md  mt-5 w-20 h-8">All</button>
+          <button className="rounded-full hover:bg-pink-800 hover:text-white border  text-gray-600 font-medium border-pink-900 shadow-md  mt-5 w-24 h-8" >Cooking</button>
+          <button className="rounded-full hover:bg-pink-800 hover:text-white border  text-gray-600 font-medium border-pink-900 shadow-md  mt-5 w-24 h-8" >Art</button>
+          <button className="rounded-full hover:bg-pink-800 hover:text-white border  text-gray-600 font-medium border-pink-900 shadow-md  mt-5 w-24 h-8" >Style</button>
+          <button className="rounded-full hover:bg-pink-800 hover:text-white border  text-gray-600 font-medium border-pink-900 shadow-md  mt-5 w-28 h-8" >Marketing</button>
         </div>
        
         </div>

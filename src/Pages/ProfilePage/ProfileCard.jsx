@@ -71,8 +71,8 @@ console.log(category);
             <Header />
           
             <div className='flex justify-end gap-9'>
-                <div  className='mt-14  text-lg font-poppins  '><button className=' hover:text-white border border-pink-900 hover:bg-pink-900 px-1  text-pink-900 bg-transparent rounded-md font-medium' onClick={()=>setshowmodal(true)}>Update Category</button></div>
-             <div  className='mt-14  text-lg  font-poppins  mr-36'><Link to={'/createprofile'}><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-1  text-white bg-pink-900 rounded-md font-medium'>Create Profile</button></Link></div>
+                <div  className='mt-14  text-lg font-poppins  '><button className=' hover:text-white border border-pink-900 hover:bg-pink-900 px-2  text-gray-600 bg-transparent rounded-md font-sm' onClick={()=>setshowmodal(true)}>Update Category</button></div>
+             <div  className='mt-14  text-lg  font-poppins  mr-36'><Link to={'/createprofile'}><button className=' hover:text-black border border-pink-900 hover:bg-transparent px-2  text-white bg-pink-900 rounded-md font-medium'>Create Profile</button></Link></div>
             
             </div>
 
@@ -90,8 +90,8 @@ console.log(category);
                     <h3 className='text-xl  text-center  font-poppins font-medium  text-pink-900 '>{item.title}</h3>
                      {/* <span className='  px-1 rounded-lg'>{item.rating}</span>
                      <span className='font-normal ml-2'>{item.type}</span> */}
-                    <p className='mt-1 text-gray-700 font-mediumfont-poppins text-center'> {item.typeofp}</p>
-                    <p className='mt-1 mb-3 text-gray-700 font-medium  font-poppins text-center'>{item.location}</p>
+                    <p className='mt-1 text-gray-600 font-medium font-poppins text-center'> {item.typeofp}</p>
+                    <p className='mt-1 mb-3 text-gray-600 font-medium  font-poppins text-center'>{item.location}</p>
 
                 </div>
 

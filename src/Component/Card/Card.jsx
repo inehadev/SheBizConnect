@@ -53,7 +53,7 @@ if(loading){
                    <div className=" cursor-pointer" onClick={() => handleCategoryClick(item._id)}    >
                       <img className=" h-[160px] w-[200px] rounded-md"src={item.image}alt="img"/>
                     
-                   <p className="text-xl mt-2 text-gray-700  opacity-70 font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
+                   <p className="text-xl mt-2 text-gray-700  opaciy-80 font-poppins  text-center font-weigh-5 " > {item.CategoryType}</p>
                    </div>
                  </div>
                   </div>

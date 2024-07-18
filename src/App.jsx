@@ -12,6 +12,7 @@ import VisitProfile from './Pages/ProfilePage/VisitProfile'
 import BreadScrumb from './Component/BreadScrumb/BreadScrumb'
 import  UpdateProfile from './Pages/ProfilePage/UpdateProfile'
 import UpdateCategory from './Component/UpdateCategory'
+// import VisitProfile from './Pages/ProfilePage/VisitProfile'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path='/visitprofile' element={<VisitProfile/>} />
       <Route path='/updateprofile' element={<UpdateProfile/>}/>
       <Route path='/updateCategory' element={<UpdateCategory/>}/>
+      <Route path = "/visit/:profileId" element={<VisitProfile/>}/>
 
 
     </Routes>
