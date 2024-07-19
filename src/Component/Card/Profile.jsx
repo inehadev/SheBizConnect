@@ -76,7 +76,7 @@ function Profile() {
          
       
           title: title,
-          img: file,
+          profileImg: file,
           typeofp: typeofp,
           location: location,
           categoryId: selectedCategoryObj._id,
@@ -92,7 +92,10 @@ function Profile() {
   
       const response = await axios.post('http://localhost:4000/create' , bodyParameter , axiosheader);
       console.log(response);
-      navigate(`/profile?category=${categoryType}`);
+      if(response){
+        console.log("fine");
+        navigate(`/profile?category=${categoryType}`);
+      }
       
         
       } catch (error) {

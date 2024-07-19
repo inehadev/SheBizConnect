@@ -84,7 +84,7 @@ console.log(category);
           <div   className='bg-rose-50 ml-9  border border-gray-500 border-opacity-10 rounded-md h-[300px]  '>
                 <div key={item._id}   className=' w-[300px] h-[170px]  rounded-sm'>
                     <img  onClick={() => handleprofileclick(item._id)}   className='rounded-md w-full h-full object-cover hover:scale-90 transition-all duration-200
-                    ' src={item.img} alt="" />
+                    ' src={item.profileImg} alt="" />
                 </div>
                 <div className='justify-center mt-2 '  >
                     <h3 className='text-xl  text-center  font-poppins font-medium  text-pink-900 '>{item.title}</h3>

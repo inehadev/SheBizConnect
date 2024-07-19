@@ -16,7 +16,7 @@ export default {
     'custom-image': "url('/girl-.jpg')",
   },
   gridTemplateColumns: {
-    'col': '500px 300px 300px ',
+    'col': '600px 300px 250px ',
   },
   gridTemplateRows: {
     'row': '200px 200px',

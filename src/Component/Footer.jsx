@@ -7,7 +7,7 @@ const Footer = ()=>{
         <>
         
        
-        <div className="h-[320px] bg-rose-50 bg-opacity-40  ">
+        <div className="h-[320px] bg-rose-50 bg-opacity-40 mx-10 mb-5  ">
           <div className="flex justify-around">
             <span className="mt-[2%] mr-[25%] text-pink-900 font-poppins text-2xl">SheBizzConnect</span>
          <div className="flex  ">

@@ -20,29 +20,31 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
     const [loading , setloading]=useState(true);
     useEffect (()=>{
 
-        // const handleProfile = async()=>{
+        const handleProfile = async()=>{
            
-        //     try{
-        //         const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
+            try{
+                const response = await axios.get(`http://localhost:4000/getprofile/${profile}`);
                
-        //         if(response){
-        //             setProfile(response.data);
-        //         }
-        //     }
-        //     catch(error){
-        //         console.log("error in get profile"  , error )
-        //     }finally{
-        //         setloading(false);
-        //     }
+                if(response && response.data ){
+                    setProfile(response.data);
+                    console.log("the profile data is ",response.data);
 
-        // }
+                }
+            }
+            catch(error){
+                console.log("error in get profile"  , error )
+            }finally{
+                setloading(false);
+            }
+
+        }
 
         const handleItem =async()=>{
             try {
             const response = await axios.get(`http://localhost:4000/visit/${profile}`);
             if (response && response.data) {
                 setAddGallery(response.data.AddGallery);
-                console.log(response.data.AddGallery);
+                console.log("the gallery data is ",response.data);
             }  
             }  catch(error){
                 console.log("error in get profile"  , error )
@@ -54,6 +56,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
         
         handleItem();
+        handleProfile();
 
     } , [])
 
@@ -87,69 +90,69 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         <div className=" justify-around mt-[2%]   items-center ">
        
         {addGallery.length > 0 && (
+                    <div   className="grid  grid-cols-col gap-1 h-[400px]   mt-[8%] justify-center ">
+                        {addGallery.slice(0,1).map((item, index) => (
+                           
+                            <div key={index} className="h-full" >
+                                <img
+                                    className="object-cover w-full h-[400px] rounded-md border border-pink-900  hover:scale-90 transition-all duration-100"
+                                    src={item.url}
+                                    alt={`Gallery Image ${index + 1}`}
+                                />
+                            </div>
+                             
+                        ))}
 
-        <div  key={addGallery._id} className="grid  grid-cols-col gap-1 h-[400px]   mt-[8%] justify-center it">
-        {addGallery.map((src, index) => (
-                        index === 0 && (
+                        <div className="grid grid-rows-2 gap-1 h-[400px]">
+                            {addGallery.slice(1,2).map((item, index) => (
+                              
+                                <div key={index} >
+                                    <img
+                                        className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                        src={item.url}
+                                        alt={`Gallery Image ${index + 2}`}
+                                    />
+                                </div>
+                                 
+                            ))}
+
+                     
+                     {addGallery.slice(2,3).map((item, index) => (
+                                
+                                <div key={index} >
+                                    <img
+                                        className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+                                        src={item.url}
+                                        alt={`Gallery Image ${index + 2}`}
+                                    />
+                                </div>
+                                 
+                            ))}
+
+                        </div>
+
+                        {addGallery.slice(3,4).map((item, index) => (
+                               
                             <div key={index}>
                                 <img
                                     className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
-                                    src={src}
-                                    alt=""
+                                    src={item.url}
+                                    alt={`Gallery Image ${index + 4}`}
                                 />
                             </div>
-                        )
-                    ))}
+                               
+                        ))}
+                    </div>
+                )}
 
-<div className=" grid grid-rows-row gap-1">
-{addGallery.map((src, index) => (
-                        index === 1 && (
-                            <div key={index}>
-                                <img
-                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
-                                    src={src}
-                                    alt=""
-                                />
-                            </div>
-                        )
-                    ))}
- {addGallery.map((src, index) => (
-                        index === 2 && (
-                            <div key={index}>
-                                <img
-                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
-                                    src={src}
-                                    alt=""
-                                />
-                            </div>
-                        )
-                    ))}
-</div>
-
-
-
-
-{addGallery.map((src, index) => (
-                        index === 3 && (
-                            <div key={index}>
-                                <img
-                                    className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
-                                    src={src}
-                                    alt=""
-                                />
-                            </div>
-                        )
-                    ))}
-
-</div> 
-        )}
-             {/* {/* <div className=' justify-center '>
+{Profile && (
+             <div className=' justify-center '>
         
                 
         <div className='ml-5 mt-2 flex  justify-start  m-36'  >
            <div className="ml-24 mt-2 font-poppins"> <h3 className='text-3xl font-medium   text-pink-900 '>{Profile.title}</h3>
-           <p className='text-xl text-pink-900 font-poppins'> {Profile.typeofp}</p>
-           <p className='font-poppins text-pink-900' >{Profile.location}</p>
+          <div className="flex gap-4 font-medium "> <p className=' text-lg text-gray-600 font-poppins'> {Profile.typeofp}</p>
+          <p className='font-poppins text-gray-600 text-lg' >{Profile.location}</p></div>
          
           </div>
          
@@ -158,16 +161,15 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
            </div>
            
     </div>
-    </div>
-
-            
+    </div> 
+     )}
+         
+             
 
          
          
            
-    {/* {Profile.ratings && Profile.ratings.length > 0 ? Profile.ratings.map(rating => getStarRatingRepresentation(rating)).join(', ') : ''}   */}
-
-
+   
           </div>
  
           
@@ -178,4 +180,67 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
         </>
     )
 }
+
+
+ {/* {Profile.ratings && Profile.ratings.length > 0 ? Profile.ratings.map(rating => getStarRatingRepresentation(rating)).join(', ') : ''}   */}
+
+//  {addGallery.length > 0 && (
+
+//     <div className="grid grid-cols-2 gap-1 h-[400px] mt-[8%] justify-center">
+//           {addGallery.slice(0, 1).map((item, index) => (
+//                             index === 0 && (
+//                                 <div key={index}>
+//                                     <img
+//                                         className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+//                                         src={src}
+//                                         alt=""
+//                                     />
+//                                 </div>
+//                             )
+//                         ))}
+    
+//     <div className=" grid grid-rows-row gap-1">
+//     {addGallery.slice(1).map((image, index) => (
+    
+//                             index === 1 && (
+//                                 <div key={index}>
+//                                     <img
+//                                         className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+//                                         src={src}
+//                                         alt=""
+//                                     />
+//                                 </div>
+//                             )
+//                         ))}
+//      {addGallery.map((src, index) => (
+//                             index === 2 && (
+//                                 <div key={index}>
+//                                     <img
+//                                         className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+//                                         src={src}
+//                                         alt=""
+//                                     />
+//                                 </div>
+//                             )
+//                         ))}
+//     </div>
+    
+    
+    
+    
+//     {addGallery.map((src, index) => (
+//                             index === 3 && (
+//                                 <div key={index}>
+//                                     <img
+//                                         className="object-cover w-full rounded-md border border-pink-900 h-full hover:scale-90 transition-all duration-100"
+//                                         src={src}
+//                                         alt=""
+//                                     />
+//                                 </div>
+//                             )
+//                         ))}
+    
+//     </div> 
+//             )}
+    
 

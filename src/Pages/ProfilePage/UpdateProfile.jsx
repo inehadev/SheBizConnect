@@ -7,13 +7,14 @@ import axios from "axios";
 const updateProfile = ()=>{
   const [showmodal , setshowmodal]=useState(false);
   const [file , setfile]=useState('');
+  const [image , setimage]=useState('');
   const [profiledata , setProfiledata]=useState({
     name :'',
     type:'',
     location:'',
     contact:'',
     AddGallery:null,
-    img:null
+    profileImg:null
   });
   const url=new URL(window.location.href);
   const profile= url.searchParams.get('profile')
@@ -28,7 +29,7 @@ const updateProfile = ()=>{
         console.log(response);
        setProfiledata({
         ...response.data,
-        img:null
+        profileImg:null
        })
       } catch (error) {
         console.log(error);
@@ -53,21 +54,33 @@ const handleChange = (e) => {
 
 const handleFileChange = (e) => {
 
+  const files = Array.from(e.target.files);
+  files.forEach(files=>{
+    const reader= new FileReader();
+    reader.readAsDataURL(files);
+    reader.onloadend=()=>{
+      
+      setfile(oldArray => [...oldArray , reader.result]);
+      console.log('File loaded:', reader.result);
+    }
+
+  })
+
+  
+};
+
+const handleImageChange =(e)=>{
   const file = e.target.files[0];
-  if (file) {
-    
+  if(file){
     const reader= new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend=()=>{
       
-      setfile(reader.result);
+      setimage( reader.result);
       console.log('File loaded:', reader.result);
-    };
-  } else {
-    console.log("File is not selected");
+    }
   }
-  
-};
+}
 
 
 
@@ -84,7 +97,7 @@ const handleUpdate =async()=>{
       type:profiledata.typeofp,
       contact:profiledata.contact,
       location:profiledata.location,
-      img:file,
+      profileImg:Image,
       AddGallery:file
 
     }
@@ -128,8 +141,8 @@ const handleUpdate =async()=>{
       </div>
       
      <div className=" flex flex-col gap-4  ">
-     <input  className="font-poppins  placeholder:text-pink-900 mt-8 px-3 ml-24 h-20 w-[510px] border border-pink-900 text-pink-900 bg-transparent rounded-sm py-1 placeholder:items-center focus:outline-none " type="file" placeholder="images" name="file" onChange={handleFileChange}/>
-     <input  className="font-poppins  placeholder:text-pink-900 mt-2 px-3 ml-24 h-20 w-[510px] border border-pink-900 text-pink-900 bg-transparent rounded-sm py-1 placeholder:items-center focus:outline-none " type="file" placeholder="Add Gallery" name="file" onChange={handleFileChange}/>
+     <input  className="font-poppins  placeholder:text-pink-900 mt-8 px-3 ml-24 h-20 w-[510px] border border-pink-900 text-pink-900 bg-transparent rounded-sm py-1 placeholder:items-center focus:outline-none " type="file" placeholder="images" name="Image" onChange={handleImageChange}/>
+     <input  className="font-poppins  placeholder:text-pink-900 mt-2 px-3 ml-24 h-20 w-[510px] border border-pink-900 text-pink-900 bg-transparent rounded-sm py-1 placeholder:items-center focus:outline-none " type="file" placeholder="Add Gallery" name="file" multiple onChange={handleFileChange}/>
      <input  className="font-poppins  placeholder:text-pink-900 px-3 ml-24 h-20 w-[510px] border border-pink-900 text-pink-900 bg-transparent rounded-sm py-1 placeholder:items-center focus:outline-none " type="text" placeholder="Add item" onClick={()=>setshowmodal(true)} />
      </div>
      
