@@ -5,6 +5,7 @@ import Header from "../Component/Header";
 import { ArrowRight } from 'lucide-react';
 import Card from "../Component/Card/Card";
 import { Link} from 'react-router-dom'
+import Footer from '../Component/Footer'
 
 
 import React from "react";
@@ -72,7 +73,7 @@ export default function HeroPage() {
         
       </div>
 
-      <Footer/>
+     <Footer/>
 
 
       

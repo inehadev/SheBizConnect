@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     
-    <Router>
+ 
 
     <Routes>
     
@@ -43,7 +43,7 @@ function App() {
 
     </Routes>
 
-    </Router>
+
    
     
    
