@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoSearch, IoSearchOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 import { useState, useEffect } from "react";
-import Card from '../Component/Card/Card'
 import Filteritem from "./Filteritem";
 
 export default function Header() {
@@ -61,8 +60,8 @@ export default function Header() {
 
                 {username ? (
                     <div className="mt-8">
-                        <Link className="mr-14 text-pink-900 text-xl" to='/login' onClick={Logout}>
-                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white">Logout</button>
+                    < Link className="mr-14 text-pink-900 text-xl" to='/login' >
+                        <button className="hover:bg-pink-800 hover:border border-pink-900 hover:px-2 hover:py-1 hover:rounded-lg hover:text-white" onClick={Logout}>Logout</button>
                         </Link>
                         <span className="mr-14 text-lg bg-pink-100 px-3 py-2 rounded-md text-pink-900">Hii {username}!👋</span>
 

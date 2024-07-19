@@ -4,6 +4,8 @@ import { Link } from "@chakra-ui/react";
 import { authContext } from "../Context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
+
 export default function Register (){
 
   const[name, setname]=useState('');
@@ -33,7 +35,7 @@ export default function Register (){
               }
           }
 
-          const response = await axios.post('http://localhost:4000/register' ,  bodyparameter ,  axiosheader );
+          const response = await axios.post('https://she-biz-connect-backend.vercel.app/register' ,  bodyparameter ,  axiosheader );
           console.log(response.data);
 
           if(response){

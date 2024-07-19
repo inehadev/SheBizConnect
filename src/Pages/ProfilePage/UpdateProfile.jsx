@@ -109,7 +109,7 @@ const handleUpdate =async()=>{
       }
     }
 
-      const response= await axios.put(`http://localhost:4000/updateProfile/${profile}` , bodyparameter , axiosheader);
+      const response= await axios.put(`https://she-biz-connect-backend.vercel.app/updateProfile/${profile}` , bodyparameter , axiosheader);
       console.log(response);
     
   } catch (error) {

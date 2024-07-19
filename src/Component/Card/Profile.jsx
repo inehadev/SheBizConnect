@@ -90,7 +90,7 @@ function Profile() {
           }
         }
   
-      const response = await axios.post('http://localhost:4000/create' , bodyParameter , axiosheader);
+      const response = await axios.post('https://she-biz-connect-backend.vercel.app/create' , bodyParameter , axiosheader);
       console.log(response);
       if(response){
         console.log("fine");
@@ -115,7 +115,7 @@ function Profile() {
           onChange={(e)=>settitle(e.target.value)} /></div>
           <div className='ml-8 mt-6 border border-pink-900 mr-14'> <input className=' w-full px-5 focus:outline-none bg-transparent py-[2.5px] placeholder: text-sm placeholder: text-pink-900   rounded-sm ' placeholder='img' type='file' onChange={handleFileChange}
         /></div>
-          <div className='ml-8 mt-6 border border-pink-900 mr-14'> <input className='  w-full px-5 focus:outline-none bg-transparent py-[2.5px] placeholder:text-sm placeholder:text-pink-900   rounded-sm  ' placeholder='Type of Food' type='text'
+          <div className='ml-8 mt-6 border border-pink-900 mr-14'> <input className='  w-full px-5 focus:outline-none bg-transparent py-[2.5px] placeholder:text-sm placeholder:text-pink-900   rounded-sm  ' placeholder='Type ' type='text'
           onChange={(e)=>settype(e.target.value)} /></div>
           <div className='ml-8 mt-6 border border-pink-900 mr-14'> <input className='  w-full px-5 focus:outline-none bg-transparent py-[2.5px] placeholder:text-sm placeholder:text-pink-900   rounded-sm  ' placeholder='Enter Your Location' type='location'
           onChange={(e)=>setlocation(e.target.value)} /></div>

@@ -12,6 +12,7 @@ import VisitProfile from './Pages/ProfilePage/VisitProfile'
 import BreadScrumb from './Component/BreadScrumb/BreadScrumb'
 import  UpdateProfile from './Pages/ProfilePage/UpdateProfile'
 import UpdateCategory from './Component/UpdateCategory'
+import Header from './Component/Header'
 // import VisitProfile from './Pages/ProfilePage/VisitProfile'
 
 
@@ -21,11 +22,13 @@ function App() {
   return (
     <>
     
-
+    <Router>
 
     <Routes>
     
     <Route path='/' element ={<HeroPage/>} />
+    <Route path='/header' element ={<Header/>} />
+
     <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
       <Route path='/categories' element ={<Categories/>} />
@@ -39,6 +42,8 @@ function App() {
 
 
     </Routes>
+
+    </Router>
    
     
    

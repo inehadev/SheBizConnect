@@ -41,7 +41,7 @@ import BreadScrumb from '../../Component/BreadScrumb/BreadScrumb'
 
         const handleItem =async()=>{
             try {
-            const response = await axios.get(`http://localhost:4000/visit/${profile}`);
+            const response = await axios.get(`https://she-biz-connect-backend.vercel.app/visit/${profile}`);
             if (response && response.data) {
                 setAddGallery(response.data.AddGallery);
                 console.log("the gallery data is ",response.data);
