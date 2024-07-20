@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "@chakra-ui/react";
+
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 export default function Login (){
 
  const [username , setusername]=useState('');
@@ -22,11 +22,12 @@ export default function Login (){
 
       const axiosheader = {
         headers:{
-            "Accept":"application/json",
+           "Accept": "application/json",
+          "Content-Type": "application/json"
         }
     }
 
-    const response = await axios.post("https://she-biz-connect-backend.vercel.app/login" , bodyparameter , axiosheader);
+    const response = await axios.post("http://localhost:4000/login" , bodyparameter , axiosheader);
     console.log(response.data);
 
     if(response){
