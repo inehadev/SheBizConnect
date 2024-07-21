@@ -25,7 +25,7 @@ const updateProfile = ()=>{
 
     const ProfileData =async()=>{
       try {
-        const response= await axios.get(`/getprofile/${profile}`);
+        const response= await axios.get(`https://shebiz-backend.vercel.app/getprofile/${profile}`);
         console.log(response);
        setProfiledata({
         ...response.data,

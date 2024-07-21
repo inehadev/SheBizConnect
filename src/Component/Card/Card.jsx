@@ -13,11 +13,10 @@ export default function Card ({filter}){
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-<<<<<<< HEAD
+
                 const response = await axios.get("https://shebiz-backend.vercel.app/getCategory");
-=======
-                const response = await axios.get("https://shebizconnect-server.vercel.app/getCategory");
->>>>>>> b742507c4e65e3e0219653634627be54ca70c2cb
+
+               
                 setCategories(response.data);
             } catch (error) {
                 console.error("Error fetching categories:", error);
