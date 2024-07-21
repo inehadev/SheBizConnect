@@ -1,7 +1,10 @@
 {
   "name": "client",
   "private": true,
+<<<<<<< HEAD
 
+=======
+>>>>>>> b742507c4e65e3e0219653634627be54ca70c2cb
   "version": "0.0.0",
   "type": "module",
 
