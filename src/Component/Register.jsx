@@ -35,7 +35,7 @@ export default function Register (){
               }
           }
 
-          const response = await axios.post('http://localhost:4000/register' ,  bodyparameter ,  axiosheader );
+          const response = await axios.post('https://shebiz-backend.vercel.app/register' ,  bodyparameter ,  axiosheader );
           console.log(response.data);
 
           if(response){

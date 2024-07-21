@@ -56,7 +56,7 @@ const AddItem =({onclose})=>{
           }
       }
 
-      const response = await axios.post(`http://localhost:4000/createItem/${profile} `, bodyparameter , axiosheader);
+      const response = await axios.post(`https://shebiz-backend.vercel.app/createItem/${profile} `, bodyparameter , axiosheader);
       console.log(response);
       if(response){
         alert('Your Item is Successfully added');

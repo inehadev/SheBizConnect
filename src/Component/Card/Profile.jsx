@@ -90,7 +90,7 @@ function Profile() {
           }
         }
   
-      const response = await axios.post('https://she-biz-connect-backend.vercel.app/create' , bodyParameter , axiosheader);
+      const response = await axios.post('https://shebiz-backend.vercel.app/create' , bodyParameter , axiosheader);
       console.log(response);
       if(response){
         console.log("fine");

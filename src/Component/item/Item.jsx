@@ -9,7 +9,7 @@ const Item = ()=>{
 
     const handleItem =async()=>{
      try {
-      const response= await axios.get(`http://localhost:4000/profileItem/${profile}`);
+      const response= await axios.get(`https://shebiz-backend.vercel.app/profileItem/${profile}`);
       console.log(response);
       if(response){
         setItem(response.data);

@@ -25,7 +25,7 @@ const updateProfile = ()=>{
 
     const ProfileData =async()=>{
       try {
-        const response= await axios.get(`http://localhost:4000/getprofile/${profile}`);
+        const response= await axios.get(`/getprofile/${profile}`);
         console.log(response);
        setProfiledata({
         ...response.data,
@@ -109,7 +109,7 @@ const handleUpdate =async()=>{
       }
     }
 
-      const response= await axios.put(`http://localhost:4000/updateProfile/${profile}` , bodyparameter , axiosheader);
+      const response= await axios.put(`/${profile}` , bodyparameter , axiosheader);
       console.log(response);
     
   } catch (error) {
