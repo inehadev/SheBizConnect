@@ -13,7 +13,7 @@ export default function Card ({filter}){
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get("https://she-biz-connect-backend.vercel.app/getCategory");
+                const response = await axios.get("http://localhost:4000/getCategory");
                 setCategories(response.data);
             } catch (error) {
                 console.error("Error fetching categories:", error);

@@ -71,7 +71,7 @@ function CategoryModal({ onClose }) {
         }
       }
 
-      const response = await axios.post('https://she-biz-connect-backend.vercel.app/category' , bodyparameter , axiosheader);
+      const response = await axios.post('http://localhost:4000/category' , bodyparameter , axiosheader);
       if(response){
         console.log(response.data);
       }

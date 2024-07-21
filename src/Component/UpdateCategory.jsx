@@ -39,7 +39,7 @@ const UpdateCategory =({onclose})=>{
                 }
               }
 
-              const response = await axios.put(`https://she-biz-connect-backend.vercel.app/updateCategory/${categoryId}`, bodyParameter , axiosheader);
+              const response = await axios.put(`http://localhost:4000/updateCategory/${categoryId}`, bodyParameter , axiosheader);
               console.log("Updated Successfully" , response);
             
         } catch (error) {
