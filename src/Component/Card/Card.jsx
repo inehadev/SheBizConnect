@@ -14,7 +14,9 @@ export default function Card ({filter}){
         const fetchCategories = async () => {
             try {
 
-                const response = await axios.get("https://shebiz-backend.vercel.app/getCategory");
+                
+
+                const response = await axios.get("https://shebiz-backend.vercel.app/getCategory" );
 
                
                 setCategories(response.data);
